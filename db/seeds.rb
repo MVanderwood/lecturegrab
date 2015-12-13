@@ -69,18 +69,7 @@ UserSubject.create({
   user_id: 1,
   subject_id: 2
   })
-UserQuote.create({
-  user_id: 1,
-  quote_id: 1
-  })
-UserQuote.create({
-  user_id: 1,
-  quote_id: 2
-  })
-UserQuote.create({
-  user_id: 1,
-  quote_id: 3
-  })
+
 
 
 
