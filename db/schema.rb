@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213195720) do
+ActiveRecord::Schema.define(version: 20151213203609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20151213195720) do
   create_table "lecture_tags", force: :cascade do |t|
     t.integer  "lecture_id"
     t.integer  "tag_id"
-    t.integer  "user_id"
     t.boolean  "confirmed?", default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -34,7 +33,6 @@ ActiveRecord::Schema.define(version: 20151213195720) do
   end
 
   create_table "quote_tags", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "quote_id"
     t.integer  "tag_id"
     t.boolean  "confirmed?", default: false
@@ -43,7 +41,6 @@ ActiveRecord::Schema.define(version: 20151213195720) do
   end
 
   create_table "quotes", force: :cascade do |t|
-    t.integer  "user_id"
     t.text     "text"
     t.string   "author"
     t.datetime "created_at", null: false
