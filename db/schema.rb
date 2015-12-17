@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20151213222118) do
   end
 
   create_table "lectures", force: :cascade do |t|
-    t.integer  "subject_id"
+    t.integer  "subject_id"s
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

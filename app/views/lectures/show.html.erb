@@ -1,0 +1,7 @@
+<h2><%= @lecture.title %></h2>
+<h3><%= @lecture.subject.name %></h3>
+<p><%= @lecture.content %></p></br>
+<!-- <h4><b>Tags: </b><% @lecture.tags.each { |tag| tag.title if confirmed? } %></h4> -->
+<%= link_to 'edit', "/lectures/#{@lecture.id}/edit" %> 
+<%= link_to 'delete', "/lectures/#{@lecture.id}", method: :delete %> </br>
+<%= link_to 'Back to Lectures', "/lectures" %> 

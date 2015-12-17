@@ -1,0 +1,12 @@
+<h2>Edit this lecture</h2>
+<%= form_tag "/lectures/#{@lecture.id}", method: :patch, id: "editForm" do %>
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @lecture.title %>
+  </div>
+  <div>
+    <%= label_tag :content %> </br>
+    <%= text_area_tag :content, @lecture.content, size: "50x10", form: "editForm" %>
+  </div>
+  <%= submit_tag "Update" %>
+<% end %>

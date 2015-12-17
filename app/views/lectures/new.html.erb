@@ -1,0 +1,16 @@
+<%= form_tag "/lectures/create", method: :post do %>
+  <div>
+    <% @subjects.each do |subject| %>
+      <%= label_tag subject.name %>
+      <%= radio_button_tag :subject, subject.id %>
+    <% end %>
+  </div></br>
+  <div>
+    <%= text_field_tag :title, nil, placeholder: "Title" , size: 50 %>
+  </div>
+  <div>
+    <%= label_tag :content %> </br>
+    <%= text_area_tag :content, nil, size: "50x10" %>
+  </div>
+  <%= submit_tag "Create" %>
+<% end %>
