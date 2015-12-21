@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217231210) do
+ActiveRecord::Schema.define(version: 20151217234749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "discussions", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.integer  "owner_id"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "lecture_id"
+  end
 
   create_table "lecture_tags", force: :cascade do |t|
     t.integer  "lecture_id"
@@ -31,6 +41,14 @@ ActiveRecord::Schema.define(version: 20151217231210) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "title"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "discussion_id"
+    t.text     "content"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "quote_tags", force: :cascade do |t|

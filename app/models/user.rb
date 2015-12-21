@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
 
   has_many :quotes
   has_many :lecture_tags
+  has_many :quote_tags
   has_many :user_lectures
   has_many :user_subjects
+  has_many :discussions, class_name: :discussions, foreign_key: :owner_id
   has_many :lectures, through: :user_lectures
   has_many :subjects, through: :user_subjects
   
