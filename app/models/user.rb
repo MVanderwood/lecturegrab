@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :quotes#, class_name: "Quote", foreign_key: :user_id
   has_many :owned_discussions, class_name: "Discussion", foreign_key: :owner_id
+  has_many :posts
 
   has_many :lecture_tags
   has_many :quote_tags
