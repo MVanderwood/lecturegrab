@@ -3,5 +3,9 @@
 <% @lectures.each do |lecture| %>
   <h2><%= link_to lecture.title, "/lectures/#{lecture.id}" %></h2>
   <p><%= lecture.content %></p></br>
-  <h4><b>Tags: </b><% lecture.tags.each { |tag| tag.title } %></h4>
+  <h4><b>Tags: </b>
+  <% lecture.tags.each do |tag| %>
+    <%=tag.title %>
+  <%end%> 
+  <%= link_to 'Add Tag', "/lectures/#{lecture.id}/tags/new" %></h4>
 <% end %>

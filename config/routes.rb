@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   patch '/lectures/:id' => 'lectures#update'
   delete '/lectures/:id' => 'lectures#destroy'
 
+  get '/lectures/:id/tags/new' => 'tags#new_lecture_tag'
+  post '/lectures/:id/tags/create' => 'tags#create_lecture_tag'
+
   devise_for :users
 end
