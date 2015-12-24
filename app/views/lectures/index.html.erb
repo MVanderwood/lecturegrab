@@ -1,7 +1,7 @@
 <%= link_to 'New Lecture', "/lectures/new" %> 
 <h1>Current Lectures:</h1>
 <% @lectures.each do |lecture| %>
- <h2><%= link_to lecture.title, "/lectures/#{lecture.id}" %></h2>
- <p><%= lecture.content %></p></br>
-<!-- <h4><b>Tags: </b><% lecture.tags.each { |tag| tag.title if confirmed? } %></h4> -->
+  <h2><%= link_to lecture.title, "/lectures/#{lecture.id}" %></h2>
+  <p><%= lecture.content %></p></br>
+  <h4><b>Tags: </b><% lecture.tags.each { |tag| tag.title } %></h4>
 <% end %>

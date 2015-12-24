@@ -5,7 +5,7 @@ class LecturesController < ApplicationController
   end
 
   def show
-    @lecture = Lecture.find_by(id: params[:id])
+    @lecture = Lecture.find_by id: params[:id]
   end
 
   def new
@@ -13,25 +13,18 @@ class LecturesController < ApplicationController
   end
 
   def create
-    lecture = Lecture.create({
-      subject_id: params[:subject],
-      title: params[:title], 
-      content: params[:content]
-      })
-    #UserLecture.create{(user_id: current_user.id, lecture_id: lecture.id)}
-    
+    lecture = Lecture.create subject_id: params[:subject], title: params[:title], content: params[:content]
+    UserLecture.create user_id: current_user.id, lecture_id: lecture.id
+    redirect_to "/lectures/#{lecture.id}"
   end
 
   def edit
-    @lecture = Lecture.find_by(id: params[:id])
+    @lecture = Lecture.find_by id: params[:id]
   end
 
   def update
-    lecture = Lecture.find_by(id: params[:id])
-    lecture.update({
-      title: params[:title], 
-      content: params[:content]
-      })
+    lecture = Lecture.find_by id: params[:id] 
+    lecture.update title: params[:title], content: params[:content]
     redirect_to "/lectures/#{lecture.id}"
   end
 

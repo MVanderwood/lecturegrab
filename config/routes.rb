@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get '/' => 'homepages#index'
+  # get '/' => 'homepages#index'
+
+  get '/' => 'lectures#index'
 
   get '/lectures' => 'lectures#index'
   get '/lectures/new' => 'lectures#new'
