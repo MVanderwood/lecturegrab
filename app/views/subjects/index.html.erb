@@ -1,0 +1,17 @@
+<%= link_to "Add a new Subject", "/subjects/new" %>
+<% @subjects.each do |subject| %>
+  <h2><%= link_to subject.name, "/subjects/#{subject.id}" %></h2>
+  <h4><%= subject.description %></h4>
+  <p>Lectures: </p>
+  <ul>
+    <% subject.lectures[0..2].each do |lecture| %>
+      <li><%= link_to lecture.title, "/lectures/#{lecture.id}" %></li>
+    <% end %>
+  </ul>
+  <p>Discussions: </p>
+  <ul>
+    <% subject.discussions[0..2].each do |discussion| %>
+    <li><% link_to discussion.title, "/discussions/#{discussion.id}" %></li>
+    <% end %>
+  </ul>
+<% end -%>

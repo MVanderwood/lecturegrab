@@ -1,5 +1,5 @@
 <h2><%= @lecture.title %></h2>
-<h3><%= @lecture.subject.name %></h3>
+<h3><%= link_to @lecture.subject.name, "/subjects/#{@lecture.subject.id}" %></h3>
 <p><%= @lecture.content %></p></br>
 <h4><b>Tags: </b> 
 <% @lecture.tags.each do |tag| %> 

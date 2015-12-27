@@ -1,0 +1,23 @@
+<h2><%= link_to @subject.name, "/subjects/#{@subject.id}" %></h2>
+<h4><%= @subject.description %></h4>
+<p>Lectures: </p>
+<ul>
+  <% @subject.lectures[0..2].each do |lecture| %>
+    <li><%= link_to lecture.title, "/lectures/#{lecture.id}" %></li>
+    <ul>
+      <li><%= lecture.content[0..200] %>...</li>
+    </ul>
+  <% end %>
+</ul>
+<p>Discussions: </p>
+<ul>
+  <% @subject.discussions[0..2].each do |discussion| %>
+  <li><% link_to discussion.title, "/discussions/#{discussion.id}" %></li>
+  <% end %>
+</ul>
+<div>
+  <%= link_to "Edit this subject", "/subjects/#{@subject.id}/edit" %>
+</div>
+<div>
+  <%= link_to "Delete this subject", "/subects/#{@subject.id}", method: :delete %>
+</div>

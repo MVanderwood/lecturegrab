@@ -1,0 +1,10 @@
+<%= form_tag "/subjects/create", method: :post do %>
+  <div>
+    <%= text_field_tag :name, nil, placeholder: "Title" , size: 50 %>
+  </div>
+  <div>
+    <%= label_tag :content %> </br>
+    <%= text_area_tag :content, nil, size: "50x5" %>
+  </div>
+  <%= submit_tag "Create" %>
+<% end %>

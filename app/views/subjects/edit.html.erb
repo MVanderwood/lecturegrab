@@ -1,0 +1,12 @@
+<h2>Edit this subject</h2>
+<%= form_tag "/subjects/#{@subject.id}", method: :patch, id: "editForm" do %>
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @subject.name %>
+  </div>
+  <div>
+    <%= label_tag :description %> </br>
+    <%= text_area_tag :description, @subject.description, size: "50x5", form: "editForm" %>
+  </div>
+  <%= submit_tag "Update" %>
+<% end %>
