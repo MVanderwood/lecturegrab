@@ -4,22 +4,22 @@ class LecturesController < ApplicationController
     @lectures = Lecture.all
   end
 
+  def new
+    @subjects = Subject.all
+  end
+
   def show
     @lecture = Lecture.find_by id: params[:id]
   end
 
-  def new
-    @subjects = Subject.all
+  def edit
+    @lecture = Lecture.find_by id: params[:id]
   end
 
   def create
     lecture = Lecture.create subject_id: params[:subject], title: params[:title], content: params[:content]
     UserLecture.create user_id: current_user.id, lecture_id: lecture.id
     redirect_to "/lectures/#{lecture.id}"
-  end
-
-  def edit
-    @lecture = Lecture.find_by id: params[:id]
   end
 
   def update
