@@ -1,5 +1,6 @@
 /* Smooth scrolling para anclas */
 $(document).on('click','a.smooth', function(e){
+    console.log("a.smooth???");
     e.preventDefault();
     var $link = $(this);
     var anchor = $link.attr('href');

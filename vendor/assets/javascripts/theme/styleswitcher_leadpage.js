@@ -81,11 +81,11 @@ function urlofdoc (jsfile) {
     var i, element, myfile, myurl;
     var scriptElement = $("script[src*='styleswitcher_leadpage.js']");
 
-    myfile = scriptElement.attr("src");
+    // myfile = scriptElement.attr("src");
 
-    if(myfile.indexOf( jsfile ) >= 0) {
-        myurl = myfile.substring( 0, myfile.indexOf( jsfile )-3);
-    }
+    // if(myfile.indexOf( jsfile ) >= 0) {
+    //     myurl = myfile.substring( 0, myfile.indexOf( jsfile )-3);
+    // }
 
     return myurl;
 }
