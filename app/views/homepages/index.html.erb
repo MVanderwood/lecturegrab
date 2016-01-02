@@ -1,0 +1,24 @@
+<div class="col-md-4">
+  <h2>Lectures</h2>
+  <% @lectures.each do |lecture| %>
+    <h3><%= link_to lecture.title, "/lectures/#{lecture.id}" %></h3>
+    <p><%= lecture.content[0..150] %>...</p>
+  <% end %>
+  <%= link_to "More lectures...", "/lectures" %>
+</div>
+<div class="col-md-4">
+  <h2>Subjects</h2>
+  <% @subjects.each do |subject| %>
+    <h3><%= link_to subject.name, "/subjects/#{subject.id}" %></h3>
+    <p><%= subject.description[0..150] %>...%></p>
+  <% end %>
+  <%= link_to "More subjects...", "/subjects" %>
+</div>
+<div class="col-md-4">
+  <h2>Discussions</h2>
+  <% @discussions.each do |discussion| %>
+    <h3><%= link_to discussion.title, "/discussions/#{discussion.id}" %></h3>
+    <p><%= discussion.content[0..150] %>...</p>
+  <% end %>
+  <%= link_to "More discussions...", "/discussions" %>
+</div>
