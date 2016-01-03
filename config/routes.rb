@@ -29,5 +29,7 @@ Rails.application.routes.draw do
   patch '/discussions/:id' => 'discussions#update'
   delete '/discussions/:id' => 'discussions#destroy'
 
+  get '/users/:handle' => 'users#show'
+
   devise_for :users
 end

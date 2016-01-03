@@ -1,0 +1,11 @@
+<%= form_tag "/discussions/#{@discussion.id}", method: :patch, id: "editForm" do %>
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @discussion.title %>
+  </div>
+  <div>
+    <%= label_tag :content %>
+    <%= text_area_tag :content, @discussion.content, size: "50x10", form: "editForm" %>
+  </div>
+  <%= submit_tag "Edit" %>
+<% end %>

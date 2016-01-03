@@ -1,0 +1,10 @@
+<h1>Discussions:</h1>
+
+<% @discussions.each do |discussion| %>
+  <h3><%= link_to discussion.title, "/discussions/#{discussion.id}" %></h3>  
+  <p><%= discussion.content %></p>
+  <% discussion.posts.each do |post| %>
+    <p><span><%= post.user.handle %></span></p>
+    <p><%= post.content %></p>
+  <% end %>
+<% end %>

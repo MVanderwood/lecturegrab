@@ -1,0 +1,7 @@
+<h3><%= @discussion.title %> -~> <%= link_to "#{@discussion.owner.handle}", "/users/#{@discussion.owner.handle}" %></h3>  
+<p><%= @discussion.content %></p>
+<% @discussion.posts.each do |post| %>
+  <p><%= post.content %></p>
+<% end %>
+
+<%= link_to "Edit this post", "/discussions/#{@discussion.id}/edit" %>
