@@ -10,7 +10,7 @@
   <h2>Subjects</h2>
   <% @subjects.each do |subject| %>
     <h3><%= link_to subject.name, "/subjects/#{subject.id}" %></h3>
-    <p><%= subject.description[0..150] %>...%></p>
+    <p><%= subject.description[0..150] %>...</p>
   <% end %>
   <%= link_to "More subjects...", "/subjects" %>
 </div>
