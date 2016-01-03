@@ -37,7 +37,8 @@ class LecturesController < ApplicationController
     lecture = Lecture.find_by(id: params[:id])
     client = Twilio::REST::Client.new ENV["TWILIO_API_SID"], ENV["TWILIO_API_KEY"]
     message = client.messages.create({
-      to: "+18167296823",
+      # to: "+18167296823",
+      to: "+1#{current_user.phone_number}",
       from: "+18168670795",
       body: "#{lecture.title} \n#{lecture.content}"
       # media_url: 

@@ -199,9 +199,11 @@
     </div><!-- container -->
 </nav>
 
-<h1><%= current_user.first_name %></h1>
 <%= yield %>
-
+</br>
+<% if user_signed_in? %>
+<%= link_to "Sign out", "/users/sign_out", method: :delete %>
+<% end %>
 
 </body>
 
