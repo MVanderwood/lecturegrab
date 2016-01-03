@@ -69,7 +69,24 @@ UserSubject.create({
   user_id: 1,
   subject_id: 2
   })
-
+User.create({
+  email: 'admin@admin.com',
+  first_name: 'Michael',
+  last_name: 'Vanderwood',
+  role: 'administrator'
+  })
+User.create({
+  email: 'admin@admin.com',
+  first_name: 'Michael',
+  last_name: 'Vanderwood',
+  role: 'administrator'
+  })
+User.create({
+  email: 'admin@admin.com',
+  first_name: 'Michael',
+  last_name: 'Vanderwood',
+  role: 'administrator'
+  })
 
 
 
