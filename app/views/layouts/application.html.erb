@@ -30,32 +30,53 @@
             </ul>
 
             <div class="dropdown animated fadeInDown animation-delay-11">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated flipCenter">
-                    <form role="form">
-                        <h4>Login Form</h4>
-
-                        <div class="form-group">
-                            <div class="input-group login-input">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
+                <% if user_signed_in? %>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><span style="font-size:18px"> <%= current_user.handle %></span></a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated flipCenter">
+                        <div>
+                            <h4>Profile Options</h4>
+                            <div>
+                                <div class="input-group login-input">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" placeholder="Username">
+                                </div>
+                                <br>
+                                <div class="input-group login-input">
+                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                    <input type="password" class="form-control" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-ar btn-primary pull-right">Login</button>
+                                <div class="clearfix"></div>
+                                <%= link_to "Sign out", "/users/sign_out", method: :delete %>
                             </div>
-                            <br>
-                            <div class="input-group login-input">
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="checkbox pull-left">
-                                  <input type="checkbox" id="checkbox_remember1">
-                                  <label for="checkbox_remember1">
-                                     Remember me
-                                  </label>
-                            </div>
-                            <button type="submit" class="btn btn-ar btn-primary pull-right">Login</button>
-                            <div class="clearfix"></div>
                         </div>
-                    </form>
-                </div>
+                <% else %>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated flipCenter">
+                        <form role="form">
+                            <h4>Login Form</h4>
+                            <div class="form-group">
+                                <div class="input-group login-input">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" placeholder="Username">
+                                </div>
+                                <br>
+                                <div class="input-group login-input">
+                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                    <input type="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="checkbox pull-left">
+                                      <input type="checkbox" id="checkbox_remember1">
+                                      <label for="checkbox_remember1">
+                                         Remember me
+                                      </label>
+                                </div>
+                                <button type="submit" class="btn btn-ar btn-primary pull-right">Login</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                <% end %>
             </div> <!-- dropdown -->
 
             <div class="dropdown animated fadeInDown animation-delay-13">
@@ -200,10 +221,6 @@
 </nav>
 
 <%= yield %>
-</br>
-<% if user_signed_in? %>
-<%= link_to "Sign out", "/users/sign_out", method: :delete %>
-<% end %>
 
 </body>
 
