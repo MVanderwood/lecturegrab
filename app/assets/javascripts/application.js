@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require angular
+//= require app
 //= require theme/vendors
 //= require theme/shCore
 //= require theme/shBrushXml
