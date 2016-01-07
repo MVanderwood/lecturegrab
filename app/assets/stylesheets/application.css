@@ -57,6 +57,7 @@
  *= require theme/vendors
  *= require theme/width-boxed
  *= require theme/width-full
+ *= require animate
  *= require_tree .
  *= require_self
  */

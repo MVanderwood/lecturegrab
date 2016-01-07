@@ -31,5 +31,15 @@ Rails.application.routes.draw do
 
   get '/users/:handle' => 'users#show'
 
+  namespace :api do
+    get '/tags' => 'tags#index'
+    get '/tags/new' => 'tags#new'
+    get '/tags/:id' => 'tags#show'
+    get '/tags/:id/edit' => 'tags#edit'
+    post '/tags/create' => 'tags#create'
+    patch '/tags/:id' => 'tags#update'
+    delete '/tags/:id' => 'tags#destroy'
+  end
+
   devise_for :users
 end
