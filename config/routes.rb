@@ -10,9 +10,6 @@ Rails.application.routes.draw do
   delete '/lectures/:id' => 'lectures#destroy'
   post '/lectures/:id' => 'lectures#text'
 
-  get '/lectures/:id/tags/new' => 'tags#new_lecture_tag'
-  post '/lectures/:id/tags/create' => 'tags#create_lecture_tag'
-
   get '/subjects' => 'subjects#index'
   get '/subjects/new' => 'subjects#new'
   get '/subjects/:id' => 'subjects#show'
@@ -32,13 +29,12 @@ Rails.application.routes.draw do
   get '/users/:handle' => 'users#show'
 
   namespace :api do
-    get '/tags' => 'tags#index'
-    get '/tags/new' => 'tags#new'
-    get '/tags/:id' => 'tags#show'
-    get '/tags/:id/edit' => 'tags#edit'
-    post '/tags/create' => 'tags#create'
-    patch '/tags/:id' => 'tags#update'
-    delete '/tags/:id' => 'tags#destroy'
+    get 'lectures/:id/tags' => 'tags#index_lecture_tag'
+    post '/lectures/:id/tags/create' => 'tags#create_lecture_tag'
+    delete '/lectures/:id/tags/:tag_id' => 'tags#destroy_lecture_tag'
+    get 'discussions/:id/tags' => 'tags#index_discussion_tag'
+    post '/discussions/:id/tags/create' => 'tags#create_discussion_tag'
+    delete '/discussions/:id/tags/:tag_id' => 'tags#destroy_discussion_tag'
   end
 
   devise_for :users
