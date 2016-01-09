@@ -1,7 +1,0 @@
-<%= form_tag "/lectures/#{@lecture.id}/tags/create", method: :post do %>
-  <div>
-    <%= label_tag :title %>
-    <%= text_field_tag :title %> 
-  </div>
-  <%= submit_tag "Add Tag" %>
-<% end %>
