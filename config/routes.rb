@@ -31,10 +31,12 @@ Rails.application.routes.draw do
   namespace :api do
     get 'lectures/:id/tags' => 'tags#index_lecture_tag'
     post '/lectures/:id/tags/create' => 'tags#create_lecture_tag'
+    post '/lectures/:id/tags/:tag_id' => 'tags#confirm_lecture_tag'
     delete '/lectures/:id/tags/:tag_id' => 'tags#destroy_lecture_tag'
-    get 'discussions/:id/tags' => 'tags#index_discussion_tag'
-    post '/discussions/:id/tags/create' => 'tags#create_discussion_tag'
-    delete '/discussions/:id/tags/:tag_id' => 'tags#destroy_discussion_tag'
+
+    get 'discussions/:id/posts' => 'posts#index_discussion_post'
+    post '/discussions/:id/posts/create' => 'posts#create_discussion_post'
+    delete '/discussions/:id/posts/:post_id' => 'posts#destroy_discussion_post'
   end
 
   devise_for :users

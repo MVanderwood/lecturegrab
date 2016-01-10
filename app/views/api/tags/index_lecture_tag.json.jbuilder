@@ -4,7 +4,7 @@ json.currentUser do
 end
 
 json.tags @tags do |tag|
-  json.title tag.title
+  json.title tag.tag.title
   json.confirmed tag.confirmed?
-  json.tagId tag.id
+  json.tagId tag.tag_id
 end

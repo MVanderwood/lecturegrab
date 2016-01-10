@@ -4,20 +4,20 @@
     <h3><%= link_to @lecture.subject.name, "/subjects/#{@lecture.subject.id}" %></h3>
     <p><%= @lecture.content %></p>
 
-<div class="dropdown dropdown open drop-demo">
-    <h4><span ng-click="tagClick()" ng-repeat="tag in tags">  
-      &nbsp;<span ng-if="tag.confirmed" class="label label-success">
-        {{ tag.title }}
-      </span>
-    </span><br>
-    <ul>
-      <li ng-click="tagClick()" ng-repeat="tag in tags">  
-        &nbsp;<span ng-if="unconfirmedTagDisplay(tag)" class="label label-danger">
-          {{ tag.title }}
-        </span>
-      </li></h4><br>
-    </ul>
-</div>
+  <h4><span ng-repeat="tag in tags">  
+    &nbsp;<span ng-if="tag.confirmed" class="label label-success">
+      {{ tag.title }}
+    </span>
+  </span>
+  <span ng-repeat="tag in tags" ng-click="toggleConfirmationButtons(tag)">
+    &nbsp;<span ng-if="unconfirmedTagDisplay(tag)" class="label label-danger">
+      {{ tag.title }}
+    </span>
+    <span ng-if="tag.showButtons">
+      <button ng-click="confirmTag(tag)" class=" button button-primary button-circle"><span class="glyphicon glyphicon-ok"></span></button>
+      <button ng-click="rejectTag(tag, $index)" class=" button button-highlight button-circle"><span class="glyphicon glyphicon-remove"></span></button>
+    </span>
+  </span></h4><br>
 
     <%= link_to 'edit', "/lectures/#{@lecture.id}/edit" %> 
     <%= link_to 'delete', "/lectures/#{@lecture.id}", method: :delete %> </br>
@@ -26,3 +26,8 @@
     <%= link_to 'Text this lecture to yourself', "/lectures/#{@lecture.id}", method: :post %>
   </div>
 </div>
+
+
+
+
+
