@@ -28,21 +28,29 @@
       }
     };
 
-    // $scope.addTag = function(title) {
-    //   var lectureId = parseInt(window.location.pathname.split("/")[2]);
-    //   var url = "/api/lectures/" + lectureId + "/tags/create";
-    //   $http.post(url, title).then(function(response) {
+    $scope.toggleTagForm = function() {
+      $scope.showTagForm = !$scope.showTagForm;
+    };
 
-    //   }, function(error) {
-
-    //   });
-    // };
+    $scope.addTag = function(inputTitle) {
+      var newTag = {"title": titleCase(inputTitle), "user_id": $scope.user.id};
+      var lectureId = parseInt(window.location.pathname.split("/")[2]);
+      var url = "/api/lectures/" + lectureId + "/tags/create";
+      console.log(url);
+      $http.post(url, newTag).then(function(response) {
+        $scope.tags.push(response.data);
+        $scope.toggleTagForm();
+      }, function(error) {
+        console.log(error);
+        $scope.errors = error.data.errors;
+      });
+    };
 
     $scope.confirmTag = function(tag) {
       if ($scope.user.role === "administrator") {
         var lectureId = parseInt(window.location.pathname.split("/")[2]);
         var url = "/api/lectures/" + lectureId + "/tags/" + tag.tagId;
-        $http.post(url, tag).then(function(response) {
+        $http.patch(url).then(function(response) {
           console.log(response);
           tag.confirmed = true;
         }, function(error) {
@@ -54,9 +62,23 @@
 
     $scope.rejectTag = function(tag, index) {
       if ($scope.user.role === "administrator") {
-        $scope.tags.splice(index, 1);
+        var lectureId = parseInt(window.location.pathname.split("/")[2]);
+        var url = "/api/lectures/" + lectureId + "/tags/" + tag.tagId;
+        $http.delete(url).then(function(response) {
+          console.log(response);
+          $scope.tags.splice(index, 1);  //Not working currently
+        }, function(error) {
+          console.log(error.data.errors);
+        });
       }
     };
+
+    var titleCase = function(str) {
+      return str.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    };
+
 
     window.$scope = $scope;
   });

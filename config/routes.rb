@@ -29,9 +29,9 @@ Rails.application.routes.draw do
   get '/users/:handle' => 'users#show'
 
   namespace :api do
-    get 'lectures/:id/tags' => 'tags#index_lecture_tag'
+    get '/lectures/:id/tags' => 'tags#index_lecture_tag'
     post '/lectures/:id/tags/create' => 'tags#create_lecture_tag'
-    post '/lectures/:id/tags/:tag_id' => 'tags#confirm_lecture_tag'
+    patch '/lectures/:id/tags/:tag_id' => 'tags#confirm_lecture_tag'
     delete '/lectures/:id/tags/:tag_id' => 'tags#destroy_lecture_tag'
 
     get 'discussions/:id/posts' => 'posts#index_discussion_post'

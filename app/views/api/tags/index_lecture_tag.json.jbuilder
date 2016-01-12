@@ -3,8 +3,8 @@ json.currentUser do
   json.role @current_user_role
 end
 
-json.tags @tags do |tag|
-  json.title tag.tag.title
-  json.confirmed tag.confirmed?
-  json.tagId tag.tag_id
+json.tags @lecture_tags do |lecture_tag|
+  json.title lecture_tag.tag.title
+  json.confirmed lecture_tag.confirmed?
+  json.tagId lecture_tag.tag_id
 end
