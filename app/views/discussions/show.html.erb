@@ -1,7 +1,20 @@
-<h3><%= @discussion.title %> -~> <%= link_to "#{@discussion.owner.handle}", "/users/#{@discussion.owner.handle}" %></h3>  
-<p><%= @discussion.content %></p>
-<% @discussion.posts.each do |post| %>
-  <p><%= post.content %></p>
-<% end %>
+<div ng-app="app">
+    <div ng-controller="postController" ng-init="setup()">
+        <h3>{{ discussion.title }} -~> <a href="/users/{{ discussion.userHandle }}">{{ discussion.userHandle }}</a></h3>  
+        <p>{{ discussion.content }}</p>
+        <div ng-repeat="post in posts">
+          <h4>~>{{ post.userHandle }}</h4>
+          <p>{{ post.content }}</p>
+        </div>
+        <span ng-if="!showPostForm">
+            <button ng-click="togglePostForm()" class="button button-circle"><span class="glyphicon glyphicon-plus"></span></button>
+        </span>
+        <div ng-if="showPostForm" class="form-group">
+            <textarea ng-model="newPostInput" rows="5" cols="100"></textarea><br>
+            <button ng-click="addPost(newPostInput)" class="button button-primary button-circle"><span class="glyphicon glyphicon-ok"></span></button>
+            <button ng-click="togglePostForm()" class="button button-caution button-circle"><span class="glyphicon glyphicon-remove"></span></button>
+        </div>
+    </div>
+</div>
 
-<%= link_to "Edit this post", "/discussions/#{@discussion.id}/edit" %>
+

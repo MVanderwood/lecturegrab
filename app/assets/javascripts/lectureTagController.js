@@ -36,12 +36,10 @@
       var newTag = {"title": titleCase(inputTitle), "user_id": $scope.user.id};
       var lectureId = parseInt(window.location.pathname.split("/")[2]);
       var url = "/api/lectures/" + lectureId + "/tags/create";
-      console.log(url);
       $http.post(url, newTag).then(function(response) {
         $scope.tags.push(response.data);
         $scope.toggleTagForm();
       }, function(error) {
-        console.log(error);
         $scope.errors = error.data.errors;
       });
     };

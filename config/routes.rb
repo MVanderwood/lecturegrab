@@ -34,9 +34,10 @@ Rails.application.routes.draw do
     patch '/lectures/:id/tags/:tag_id' => 'tags#confirm_lecture_tag'
     delete '/lectures/:id/tags/:tag_id' => 'tags#destroy_lecture_tag'
 
-    get 'discussions/:id/posts' => 'posts#index_discussion_post'
-    post '/discussions/:id/posts/create' => 'posts#create_discussion_post'
-    delete '/discussions/:id/posts/:post_id' => 'posts#destroy_discussion_post'
+    get 'discussions/:id/posts' => 'posts#index'
+    post '/discussions/:id/posts/create' => 'posts#create'
+    patch '/discussions/:id/posts/:post_id' => 'posts#update'
+    delete '/discussions/:id/posts/:post_id' => 'posts#destroy'
   end
 
   devise_for :users
