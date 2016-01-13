@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'options/show'
+
   get '/' => 'homepages#index'
 
   get '/lectures' => 'lectures#index'
@@ -27,6 +29,8 @@ Rails.application.routes.draw do
   delete '/discussions/:id' => 'discussions#destroy'
 
   get '/users/:handle' => 'users#show'
+  get '/users/:handle/queue' => 'queues#show'
+  get '/users/:handle/options' => 'options#show'
 
   namespace :api do
     get '/lectures/:id/tags' => 'tags#index_lecture_tag'

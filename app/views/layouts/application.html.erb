@@ -219,10 +219,11 @@
         </div><!-- navbar-collapse -->
     </div><!-- container -->
 </nav>
-
+<div class="container">
 <%= yield %>
 
-<%= link_to "log out", "/users/sign_out", method: :delete %>
+<br><%= link_to "log out", "/users/sign_out", method: :delete %>
+</div>
 
 </body>
 
