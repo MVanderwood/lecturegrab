@@ -3,8 +3,16 @@
         <h3>{{ discussion.title }} -~> <a href="/users/{{ discussion.userHandle }}">{{ discussion.userHandle }}</a></h3>  
         <p>{{ discussion.content }}</p>
         <div ng-repeat="post in posts">
-          <h4>~>{{ post.userHandle }}</h4>
-          <p>{{ post.content }}</p>
+            <h4>~>{{ post.userHandle }}</h4>
+            <div ng-if="!showEditForm[$index]">
+                <p>{{ post.content }}
+                <button ng-if="user.id === post.userId" ng-click="toggleEditForm($index)" class="button button-circle button-highlight"><span class="glyphicon glyphicon-pencil"></span></button></p>
+            </div>
+            <div ng-if="showEditForm[$index]">
+                <textarea ng-model="editPostInput" ng-init="editPostInput=post.content" cols="100" rows="5">{{ editPostInput }}</textarea>
+                <button ng-click="editPost(post, $index, editPostInput)" class="button button-primary button-circle"><span class="glyphicon glyphicon-pencil"></span></button>
+                <button ng-click="toggleEditForm($index)" class="button button-caution button-circle"><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
         </div>
         <span ng-if="!showPostForm">
             <button ng-click="togglePostForm()" class="button button-circle"><span class="glyphicon glyphicon-plus"></span></button>

@@ -11,6 +11,7 @@ json.discussion do
 end
 
 json.posts @posts do |post|
+  json.id post.id
   json.userId post.user_id
   json.userHandle post.user.handle
   json.content post.content
