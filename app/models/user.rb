@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :quote_tags
   has_many :user_lectures
   has_many :user_subjects
+  has_many :options
   has_many :discussion_followers, foreign_key: :follower_id
   has_many :followed_discussions, through: :discussion_followers, foreign_key: :follower_id
   has_many :lectures, through: :user_lectures

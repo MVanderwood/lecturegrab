@@ -1,69 +1,93 @@
-<h3>Lecture<span>grab</span> is an application for continuing education through whatever habajab</h3>
-<h3>Fill out your options below!</h3>
+<div ng-app="app">
+    <div ng-controller="optionsController" ng-init="setup()">                
+        <h3>Lecture<span>grab</span> is an application for continuing education through whatever habajab</h3>
+        <h3>Fill out your options below!</h3>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">Lecture<span>grab</span> Options</div>
-    <div class="panel-body">
-        <form role="form">
-            <div class="checkbox">
-                <input type="checkbox" id="checkbox5">
-                <label for="checkbox5">Check me out</label>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Lecture<span>grab</span> Options</div>
+            <div class="panel-body">
+                <form role="form">
+                    <label for="prefRadio">Preferred Method of Delivery</label>
+                    <span class="radio">
+                        <input type="radio" name="prefRadio" id="prefRadio1" value="option1" checked="">
+                        <label for="prefRadio1">Queue Only</label>
+                    </span>
+                    <span class="radio">
+                        <input type="radio" name="prefRadio" id="prefRadio2" value="option2">
+                        <label for="prefRadio2">Text</label>
+                    </span>
+                    <span class="radio">
+                        <input type="radio" name="prefRadio" id="prefRadio3" value="option3">
+                        <label for="prefRadio3">Email</label>
+                    </span>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label for="select">Day</label>
+                            <select class="form-control" id="select">
+                                <option>Sunday</option>
+                                <option>Monday</option>
+                                <option>Tuesday</option>
+                                <option>Wednesday</option>
+                                <option>Thursday</option>
+                                <option>Friday</option>
+                                <option>Saturday</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="time">Time</label>
+                            <div id="time">
+                               <input ng-model="inputTime" type="time" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="select">How often?</label>
+                            <select class="form-control" id="select">
+                                <option>Once a Week</option>
+                                <option>Every Other Week</option>
+                                <option>Every Third Week</option>
+                                <option>Monthly</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="radio">
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                <label for="optionsRadios1">Queue Only</label>
+                            </span>
+                            <span class="radio">
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <label for="optionsRadios2">Text</label>
+                            </span>
+                            <span class="radio">
+                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                <label for="optionsRadios3">Email</label>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-ar btn-primary" ng-click="test(inputTime)">Save</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Textarea</label>
-                <textarea class="form-control" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-                <div class="checkbox checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label for="inlineCheckbox1">1</label>
-                </div>
-                <div class="checkbox checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label for="inlineCheckbox2">2</label>
-                </div>
-                <div class="checkbox checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label for="inlineCheckbox3">3</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="select">Selects</label>
-                <select class="form-control" id="select">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="multiple-select">Multiple Select</label>
-                <select multiple="" class="form-control" id="multiple-select">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="checkbox">
-                <input type="checkbox" value="" id="checkbox3">
-                <label for="checkbox3">
-                  
-                  Option one is this and that—be sure to include why it's great
-                </label>
-            </div>
-            <div class="radio">
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                <label for="optionsRadios1">Option one is this and that—be sure to include why it's great</label>
-            </div>
-            <div class="radio">
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                <label for="optionsRadios2">Option two can be something else and selecting it will deselect option one</label>
-            </div>
-            <button type="submit" class="btn btn-ar btn-primary">Submit</button>
-            <button type="cancel" class="btn btn-ar btn-default">Cancel</button>
-        </form>
+        </div>
+        <table class="table table-striped table-striped-primary">
+            <thead><tr>
+                <th>#</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Interval</th>
+                <th>Delivery</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr></thead>
+            <tbody>
+                <tr ng-repeat="option in options">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ option.deliveryTime }}</td>
+                    <td>{{ option.deliveryTime }}</td>
+                    <td>{{ option.deliveryInterval }}</td>
+                    <td>{{ option.deliveryMethod }}</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
