@@ -5,7 +5,7 @@
   angular.module("app").controller("postController", function($scope, $http) {
 
     $scope.setup = function() {
-      var discussionId = parseInt(window.location.pathname.split("/")[2]);
+      var discussionId = window.location.pathname.split("/")[2];
       var url = "/api/discussions/" + discussionId + "/posts.json";
       $http.get(url).then(function(response) {
         $scope.discussion = response.data.discussion;

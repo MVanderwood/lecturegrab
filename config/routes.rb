@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'options/show'
+
   get '/' => 'homepages#index'
 
   get '/lectures' => 'lectures#index'
@@ -27,6 +29,8 @@ Rails.application.routes.draw do
   delete '/discussions/:id' => 'discussions#destroy'
 
   get '/users/:handle' => 'users#show'
+  get '/users/:handle/queue' => 'queues#show'
+  get '/users/:handle/options' => 'options#show'
 
   namespace :api do
     get '/lectures/:id/tags' => 'tags#index_lecture_tag'
@@ -34,10 +38,15 @@ Rails.application.routes.draw do
     patch '/lectures/:id/tags/:tag_id' => 'tags#confirm_lecture_tag'
     delete '/lectures/:id/tags/:tag_id' => 'tags#destroy_lecture_tag'
 
-    get 'discussions/:id/posts' => 'posts#index'
+    get '/discussions/:id/posts' => 'posts#index'
     post '/discussions/:id/posts/create' => 'posts#create'
     patch '/discussions/:id/posts/:post_id' => 'posts#update'
     delete '/discussions/:id/posts/:post_id' => 'posts#destroy'
+
+    get '/users/:handle/options' => 'options#show'
+    post '/users/:handle/options/create' => 'options#create'
+    patch '/users/:handle/options/:option_id' => 'options#update'
+    delete '/users/:handle/options/:option_id' => 'options#destroy'
   end
 
   devise_for :users
