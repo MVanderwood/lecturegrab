@@ -11,8 +11,8 @@ class Api::OptionsController < ApplicationController
       delivery_interval: params[:delivery_interval],
       delivery_method: params[:delivery_method]
     })
-    time = {time_of_day: params[:time], day: params[:day]}
-    option.add_time(time)
+    option[:delivery_time] = option.set_time({time_of_day: params[:time], day: params[:day]})
+    p option.delivery_time
   end
 
   def update

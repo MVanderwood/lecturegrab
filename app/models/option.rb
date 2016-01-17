@@ -1,37 +1,38 @@
 class Option < ActiveRecord::Base
   belongs_to :user
   belongs_to :subject
+  attr_reader :weekday_config
 
-  def add_time(time)
-    day = weekday_convert(time[:day])
-    hour = time[:time_of_day].split(":")[0].to_i
-    minutes = time[:time_of_day].split(":")[1].split(" ")[0].to_i
-    m = time[:time_of_day].split(":")[1].split(" ")[1]
-    if m == "PM"
-      hour += 12
+  @@weekday_config = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+  def set_time(time)
+    datetime = DateTime.parse(time[:time_of_day])
+    weekday = @@weekday_config.index(time[:day])
+    datetime += ((weekday - datetime.wday) % 7) - 1
+    if datetime < DateTime.current
+      datetime += 1.week
     end
-    weekday = weekday_convert(time[:day])
-    
+    datetime
   end
 
   private
 
   def weekday_convert(day)
-    if day == "Sunday"
+    if day == "Saturday"
       ruby_day = 0
-    elsif day == "Monday"
+    elsif day == "Sunday"
       ruby_day = 1
-    elsif day == "Tuesday"
+    elsif day == "Monday"
       ruby_day = 2
-    elsif day == "Wednesday"
+    elsif day == "Tuesday"
       ruby_day = 3
-    elsif day == "Thursday"
+    elsif day == "Wednesday"
       ruby_day = 4
-    elsif day == "Friday"
+    elsif day == "Thursday"
       ruby_day = 5
-    elsif day == "Saturday"
+    elsif day == "Friday"
       ruby_day = 6
     end
-    day
+    ruby_day
   end
 end
