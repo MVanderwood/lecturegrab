@@ -1,5 +1,9 @@
 json.currentUser do 
   json.id @user.id
+  json.subjects @user.subjects do |subject|
+    json.id subject.id
+    json.title subject.name
+  end
 end
 
 json.options @user.options do |option|

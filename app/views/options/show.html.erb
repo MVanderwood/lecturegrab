@@ -7,69 +7,65 @@
             <div class="panel-heading">Lecture<span>grab</span> Options</div>
             <div class="panel-body">
                 <form role="form">
-                    <label for="prefRadio">Preferred Method of Delivery</label>
-                    <span class="radio">
-                        <input type="radio" name="prefRadio" id="prefRadio1" value="option1" checked="">
-                        <label for="prefRadio1">Queue Only</label>
-                    </span>
-                    <span class="radio">
-                        <input type="radio" name="prefRadio" id="prefRadio2" value="option2">
-                        <label for="prefRadio2">Text</label>
-                    </span>
-                    <span class="radio">
-                        <input type="radio" name="prefRadio" id="prefRadio3" value="option3">
-                        <label for="prefRadio3">Email</label>
-                    </span>
                     <div class="form-group">
-                        <div class="col-md-3">
-                            <label for="select">Day</label>
-                            <select class="form-control" id="select">
-                                <option>Sunday</option>
-                                <option>Monday</option>
-                                <option>Tuesday</option>
-                                <option>Wednesday</option>
-                                <option>Thursday</option>
-                                <option>Friday</option>
-                                <option>Saturday</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="time">Time</label>
-                            <div id="time">
-                               <input ng-model="inputTime" type="time" class="form-control">
+                        <div class="col-md-9">
+                            <div class="col-md-3">
+                                <label for="select">Which Subject</label>
+                                <select ng-model="newSubject" class="form-control" id="select">
+                                    <option ng-repeat="subject in user.subjects">{{ subject.title }}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="select">Day</label>
+                                <select ng-model="newDay" class="form-control" id="select">
+                                    <option>Sunday</option>
+                                    <option>Monday</option>
+                                    <option>Tuesday</option>
+                                    <option>Wednesday</option>
+                                    <option>Thursday</option>
+                                    <option>Friday</option>
+                                    <option>Saturday</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="time">Time</label>
+                                <div id="time">
+                                   <input ng-model="newHour" type="time" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="select">How often?</label>
+                                <select ng-model="newInterval" class="form-control" id="select">
+                                    <option>Just Once</option>
+                                    <option>Weekly</option>
+                                    <option>Biweeky</option>
+                                    <option>Monthly</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label for="select">How often?</label>
-                            <select class="form-control" id="select">
-                                <option>Once a Week</option>
-                                <option>Every Other Week</option>
-                                <option>Every Third Week</option>
-                                <option>Monthly</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
                             <span class="radio">
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                <input ng-model="newDelivery" type="radio" name="optionsRadios" id="optionsRadios1" value="Queue">
                                 <label for="optionsRadios1">Queue Only</label>
                             </span>
                             <span class="radio">
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input ng-model="newDelivery" type="radio" name="optionsRadios" id="optionsRadios2" value="Text">
                                 <label for="optionsRadios2">Text</label>
                             </span>
                             <span class="radio">
-                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                <input ng-model="newDelivery" type="radio" name="optionsRadios" id="optionsRadios3" value="Email">
                                 <label for="optionsRadios3">Email</label>
                             </span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-ar btn-primary" ng-click="test(inputTime)">Save</button>
+                    <button type="submit" class="btn btn-ar btn-primary" ng-click="addOption(newSubject, newDay, newHour, newInterval, newDelivery)">Save</button>
                 </form>
             </div>
         </div>
         <table class="table table-striped table-striped-primary">
             <thead><tr>
                 <th>#</th>
+                <th>Subject</th>
                 <th>Day</th>
                 <th>Time</th>
                 <th>Interval</th>
@@ -80,12 +76,51 @@
             <tbody>
                 <tr ng-repeat="option in options">
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ option.deliveryTime }}</td>
-                    <td>{{ option.deliveryTime }}</td>
-                    <td>{{ option.deliveryInterval }}</td>
-                    <td>{{ option.deliveryMethod }}</td>
-                    <td><button>Edit</button></td>
-                    <td><button>Remove</button></td>
+                    <td ng-if="!showEditForm[$index]">{{ option.subject }}</td>
+                    <td ng-if="showEditForm[$index]">
+                        <select ng-model="updatedSubject" class="form-control" id="select" value="{{ options[$index].subject }}">
+                            <option ng-repeat="subject in user.subjects">{{ subject.title }}</option>
+                        </select>
+                    </td>
+                    <td ng-if="!showEditForm[$index]">{{ option.deliveryDay }}</td>
+                    <td ng-if="showEditForm[$index]">
+                        <select ng-model="updatedDay" class="form-control" id="select" value="{{ options[$index].deliveryDay }}">
+                            <option>Sunday</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                        </select>
+                    </td>
+                    <td ng-if="!showEditForm[$index]">{{ option.deliveryHour }}</td>
+                    <td ng-if="showEditForm[$index]">
+                        <div id="time" value="{{ options[$index].deliveryHour }}">
+                           <input ng-model="updatedHour" type="time" class="form-control">
+                        </div>
+                    </td>
+                    <td ng-if="!showEditForm[$index]">{{ option.deliveryInterval }}</td>
+                    <td ng-if="showEditForm[$index]">
+                        <select ng-model="updatedInterval" class="form-control" id="select" value="{{ options[$index].deliveryInterval }}">
+                            <option>Just Once</option>
+                            <option>Weekly</option>
+                            <option>Biweeky</option>
+                            <option>Monthly</option>
+                        </select>
+                    </td>
+                    <td ng-if="!showEditForm[$index]">{{ option.deliveryMethod }}</td>
+                    <td ng-if="showEditForm[$index]">
+                        <select ng-model="updatedDelivery" class="form-control" id="select" value="options[$index].deliveryMethod">
+                            <option>Queue</option>
+                            <option>Text</option>
+                            <option>Email</option>
+                        </select>
+                    </td>
+                    <td ng-if="!showEditForm[$index]"><button ng-click="toggleEditForm($index, option)">Edit</button></td>
+                    <td ng-if="showEditForm[$index]"><button ng-click="editOption($index, updatedSubject, updatedDay, updatedHour, updatedInterval, updatedDelivery)">Update</button></td>
+                    <td ng-if="!showEditForm[$index]"><button ng-click="deleteOption($index)">Remove</button></td>
+                    <td ng-if="showEditForm[$index]"><button ng-click="toggleEditForm($index, option)">Cancel</button></td>
                 </tr>
             </tbody>
         </table>
