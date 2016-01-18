@@ -15,24 +15,11 @@ class Option < ActiveRecord::Base
     datetime
   end
 
-  private
+  def readable_time
+    delivery_time.strftime("%l:%M %p")
+  end
 
-  def weekday_convert(day)
-    if day == "Saturday"
-      ruby_day = 0
-    elsif day == "Sunday"
-      ruby_day = 1
-    elsif day == "Monday"
-      ruby_day = 2
-    elsif day == "Tuesday"
-      ruby_day = 3
-    elsif day == "Wednesday"
-      ruby_day = 4
-    elsif day == "Thursday"
-      ruby_day = 5
-    elsif day == "Friday"
-      ruby_day = 6
-    end
-    ruby_day
+  def readable_weekday
+    delivery_time.strftime("%A")
   end
 end

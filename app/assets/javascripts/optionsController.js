@@ -34,17 +34,24 @@
     $scope.addOption = function(newSubject, newDay, newHour, newInterval, newDelivery) {
       var userHandle = window.location.pathname.split("/")[2];
       var url = "/api/users/" + userHandle + "/options/create";
-      var option = {"user_id": $scope.user.id , "subject": newSubject, "day": newDay, "time": $scope.clockTime(newHour), "delivery_interval": newInterval, "delivery_method": newDelivery};
-      $http.post(url, option).then(function(response) {
-        console.log(response);
-        $scope.options.push({"subject": newSubject, "deliveryDay": newDay, "deliveryHour": $scope.clockTime(newHour), "deliveryInterval": newInterval, "deliveryMethod": newDelivery});
+      var newOption = {"user_id": $scope.user.id , "subject": newSubject, "day": newDay, "time": $scope.clockTime(newHour), "delivery_interval": newInterval, "delivery_method": newDelivery};
+      $http.post(url, newOption).then(function(response) {
+        $scope.options.push(response.data.option);
       }, function(error) {
         console.log(error);
       });
     };
 
-    $scope.editOption = function(index, updatedSubject, updatedDay, updatedHour, updatedInterval, updatedDelivery) {
-      $scope.options[index] = {"subject": updatedSubject, "deliveryDay": updatedDay, "deliveryHour":  $scope.clockTime(updatedHour), "deliveryInterval": updatedInterval, "deliveryMethod": updatedDelivery};
+    $scope.editOption = function(option, index, updatedSubject, updatedDay, updatedHour, updatedInterval, updatedDelivery) {
+      var userHandle = window.location.pathname.split("/")[2];
+      var url = "/api/users/" + userHandle + "/options/" + option.id;
+      var updatedOption = {"option_id": option.id, "subject": updatedSubject, "day": updatedDay, "time": $scope.clockTime(updatedHour), "delivery_interval": updatedInterval, "delivery_method": updatedDelivery};
+      $http.patch(url, updatedOption).then(function(response) {
+        $scope.options.push(response.data.option);
+        console.log(response);
+      }, function(error) {
+        console.log(error);
+      });
       $scope.showEditForm[index] = false;
     };
 

@@ -118,7 +118,7 @@
                         </select>
                     </td>
                     <td ng-if="!showEditForm[$index]"><button class="btn btn-ar" ng-click="toggleEditForm($index, option)">Edit</button></td>
-                    <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="editOption($index, updatedSubject, updatedDay, updatedHour, updatedInterval, updatedDelivery)">Update</button></td>
+                    <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="editOption(option, $index, updatedSubject, updatedDay, updatedHour, updatedInterval, updatedDelivery)">Update</button></td>
                     <td ng-if="!showEditForm[$index]"><button class="btn btn-ar" ng-click="deleteOption($index)">Remove</button></td>
                     <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="toggleEditForm($index, option)">Cancel</button></td>
                 </tr>
