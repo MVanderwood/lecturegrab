@@ -14,7 +14,6 @@ class Api::OptionsController < ApplicationController
   end
 
   def update
-    puts "======================================================"
     option = Option.find_by(id: params[:option_id])
     option_updates = {subject_id: Subject.find_by(name: params[:subject]).id, delivery_time: option.set_time({time_of_day: params[:time], day: params[:day]}), delivery_interval: params[:delivery_interval], delivery_method: params[:delivery_method]}
     if option.update(option_updates)
