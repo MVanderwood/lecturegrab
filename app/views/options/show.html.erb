@@ -1,5 +1,5 @@
 <div ng-app="app">
-    <div ng-controller="optionsController" ng-init="setup()">                
+    <div ng-controller="optionsController" ng-init="setup()" ng-mouseover="test()">                
         <h3>Lecture<span>grab</span> is an application for continuing education through whatever habajab</h3>
         <h3>Fill out your options below!</h3>
 
@@ -119,7 +119,7 @@
                     </td>
                     <td ng-if="!showEditForm[$index]"><button class="btn btn-ar" ng-click="toggleEditForm($index, option)">Edit</button></td>
                     <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="editOption(option, $index, updatedSubject, updatedDay, updatedHour, updatedInterval, updatedDelivery)">Update</button></td>
-                    <td ng-if="!showEditForm[$index]"><button class="btn btn-ar" ng-click="deleteOption($index)">Remove</button></td>
+                    <td ng-if="!showEditForm[$index]"><button class="btn btn-ar" ng-click="deleteOption(option, $index)">Remove</button></td>
                     <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="toggleEditForm($index, option)">Cancel</button></td>
                 </tr>
             </tbody>

@@ -25,6 +25,12 @@ class Api::OptionsController < ApplicationController
   end
 
   def destroy
-
+    option = Option.find_by(id: params[:option_id])
+    option.destroy
+    if option.destroyed?
+      render json: {message: "Deleted successfully"}
+    else
+      render json: option.errors.full_messages
+    end
   end
 end

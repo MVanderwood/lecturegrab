@@ -55,7 +55,14 @@
       $scope.showEditForm[index] = false;
     };
 
-    $scope.deleteOption = function(index) {
+    $scope.deleteOption = function(option, index) {
+      var userHandle = window.location.pathname.split("/")[2];
+      var url = "/api/users/" + userHandle + "/options/" + option.id;
+      $http.delete(url, {"option_id": option.id}).then(function(response) {
+        console.log(response);
+      }, function(error) {
+        console.log(error);
+      });
       $scope.options.splice(index, 1);
     };
 
