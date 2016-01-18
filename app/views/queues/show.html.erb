@@ -1,0 +1,10 @@
+<% @user_lectures.each_with_index do |user_lecture, index| %>
+    <div class="panel panel-primary-dark">
+        <div class="panel-heading">
+          <h4><%= link_to user_lecture.lecture.title, "/lectures/#{user_lecture.lecture.id}" %></h4>
+        </div>
+        <div class="panel-body">
+          <p><%= user_lecture.lecture.content %></p>
+        </div>
+    </div>
+<% end %>

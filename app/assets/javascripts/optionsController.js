@@ -33,6 +33,7 @@
 
     $scope.addOption = function(newSubject, newDay, newHour, newInterval, newDelivery) {
       var userHandle = window.location.pathname.split("/")[2];
+      console.log(newHour);
       var url = "/api/users/" + userHandle + "/options/create";
       var newOption = {"user_id": $scope.user.id , "subject": newSubject, "day": newDay, "time": $scope.clockTime(newHour), "delivery_interval": newInterval, "delivery_method": newDelivery};
       $http.post(url, newOption).then(function(response) {
@@ -47,7 +48,7 @@
       var url = "/api/users/" + userHandle + "/options/" + option.id;
       var updatedOption = {"option_id": option.id, "subject": updatedSubject, "day": updatedDay, "time": $scope.clockTime(updatedHour), "delivery_interval": updatedInterval, "delivery_method": updatedDelivery};
       $http.patch(url, updatedOption).then(function(response) {
-        $scope.options.push(response.data.option);
+        $scope.options[index] = response.data.option;
         console.log(response);
       }, function(error) {
         console.log(error);

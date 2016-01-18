@@ -6,7 +6,12 @@ class Option < ActiveRecord::Base
   @@weekday_config = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
   def set_time(time)
-    datetime = DateTime.parse(time[:time_of_day])
+    datetime = Time.zone.parse(time[:time_of_day]).to_datetime
+    puts "======================================================"
+    puts "======================================================"
+    puts datetime
+    puts "======================================================"
+    puts "======================================================"
     weekday = @@weekday_config.index(time[:day])
     datetime += ((weekday - datetime.wday) % 7) - 1
     if datetime < DateTime.current
