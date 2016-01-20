@@ -1,7 +1,17 @@
 class Option < ActiveRecord::Base
   belongs_to :user
   belongs_to :subject
-  attr_reader :weekday_config, :delivery_time
+  
+  validates :user_id, presence: true, numericality: { only_integer: true }
+  validates :subject_id, presence: true, numericality: { only_integer: true }
+  validates :job_id, presence: true, numericality: { only_integer: true }
+  validates :delivery_time, presence: true
+  validates :delivery_interval, presence: true
+  validates :delivery_interval, inclusion: { in: ["Just Once", "Weekly", "Biweekly", "Monthly"] }
+  validates :delivery_method, presence: true
+  validates :delivery_method, inclusion: { in: ["Text", "Email", "Queue"]}
+
+  attr_reader :weekday_config
 
   @@weekday_config = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
@@ -22,16 +32,4 @@ class Option < ActiveRecord::Base
   def readable_weekday
     delivery_time.strftime("%A")
   end
-
-  def add_job_and_save
-    return_value = save
-    if return_value
-      QueueJob.delay(run_at: delivery_time).send_lecture(self)
-    end
-    return_value
-  end
 end
-
-
-
-

@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'twilio-ruby'
+gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 
 gem 'dotenv-rails'
 

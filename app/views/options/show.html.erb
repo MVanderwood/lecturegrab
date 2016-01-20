@@ -11,13 +11,13 @@
                         <div class="col-md-9">
                             <div class="col-md-3">
                                 <label for="select">Which Subject</label>
-                                <select ng-model="newSubject" class="form-control" id="select">
+                                <select ng-model="newSubject" class="form-control">
                                     <option ng-repeat="subject in user.subjects">{{ subject.title }}</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <label for="select">Day</label>
-                                <select ng-model="newDay" class="form-control" id="select">
+                                <select ng-model="newDay" class="form-control">
                                     <option>Sunday</option>
                                     <option>Monday</option>
                                     <option>Tuesday</option>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="select">How often?</label>
-                                <select ng-model="newInterval" class="form-control" id="select">
+                                <select ng-model="newInterval" class="form-control">
                                     <option>Just Once</option>
                                     <option>Weekly</option>
                                     <option>Biweeky</option>
@@ -58,7 +58,7 @@
                             </span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-ar btn-primary" ng-click="addOption(newSubject, newDay, newHour, newInterval, newDelivery)">Save</button>
+                    <button type="submit" class="btn btn-ar btn-primary" ng-click="addOption()">Save</button>
                 </form>
             </div>
         </div>
@@ -78,13 +78,13 @@
                     <td>{{ $index + 1 }}</td>
                     <td ng-if="!showEditForm[$index]">{{ option.subject }}</td>
                     <td ng-if="showEditForm[$index]">
-                        <select ng-model="updatedSubject" class="form-control" id="select" value="{{ options[$index].subject }}">
+                        <select ng-model="updatedSubject" ng-change="changeSubject(updatedSubject)" class="form-control" value="{{ options[$index].subject }}">
                             <option ng-repeat="subject in user.subjects">{{ subject.title }}</option>
                         </select>
                     </td>
                     <td ng-if="!showEditForm[$index]">{{ option.deliveryDay }}</td>
                     <td ng-if="showEditForm[$index]">
-                        <select ng-model="updatedDay" class="form-control" id="select" value="{{ options[$index].deliveryDay }}">
+                        <select ng-model="updatedDay" ng-change="changeDay(updatedDay)" class="form-control" value="{{ options[$index].deliveryDay }}">
                             <option>Sunday</option>
                             <option>Monday</option>
                             <option>Tuesday</option>
@@ -97,12 +97,12 @@
                     <td ng-if="!showEditForm[$index]">{{ option.deliveryHour }}</td>
                     <td ng-if="showEditForm[$index]">
                         <div id="time" value="{{ options[$index].deliveryHour }}">
-                           <input ng-model="updatedHour" type="time" class="form-control">
+                           <input ng-model="updatedHour" ng-change="changeHour(updatedHour)" type="time" class="form-control">
                         </div>
                     </td>
                     <td ng-if="!showEditForm[$index]">{{ option.deliveryInterval }}</td>
                     <td ng-if="showEditForm[$index]">
-                        <select ng-model="updatedInterval" class="form-control" id="select" value="{{ options[$index].deliveryInterval }}">
+                        <select ng-model="updatedInterval" ng-change="changeInterval(updatedInterval)" class="form-control" value="{{ options[$index].deliveryInterval }}">
                             <option>Just Once</option>
                             <option>Weekly</option>
                             <option>Biweeky</option>
@@ -111,14 +111,14 @@
                     </td>
                     <td ng-if="!showEditForm[$index]">{{ option.deliveryMethod }}</td>
                     <td ng-if="showEditForm[$index]">
-                        <select ng-model="updatedDelivery" class="form-control" id="select" value="options[$index].deliveryMethod">
+                        <select ng-model="updatedDelivery" ng-change="changeDelivery(updatedDelivery)" class="form-control" value="options[$index].deliveryMethod">
                             <option>Queue</option>
                             <option>Text</option>
                             <option>Email</option>
                         </select>
                     </td>
                     <td ng-if="!showEditForm[$index]"><button class="btn btn-ar" ng-click="toggleEditForm($index, option)">Edit</button></td>
-                    <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="editOption(option, $index, updatedSubject, updatedDay, updatedHour, updatedInterval, updatedDelivery)">Update</button></td>
+                    <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="editOption(option, $index)">Update</button></td>
                     <td ng-if="!showEditForm[$index]"><button class="btn btn-ar" ng-click="deleteOption(option, $index)">Remove</button></td>
                     <td ng-if="showEditForm[$index]"><button class="btn btn-ar" ng-click="toggleEditForm($index, option)">Cancel</button></td>
                 </tr>
