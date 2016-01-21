@@ -12,14 +12,12 @@
  *
  *= require theme/leadpage
  *= require theme/preload
- *= require theme/style-aqua
  *= require theme/style-blue
  *= require theme/style-blue2
  *= require theme/style-blue3
  *= require theme/style-blue4
  *= require theme/style-blue5
  *= require theme/style-fuchsia
- *= require theme/style-gray
  *= require theme/style-green
  *= require theme/style-green2
  *= require theme/style-green3
@@ -32,11 +30,13 @@
  *= require theme/style-red
  *= require theme/style-red3
  *= require theme/style-violet
- *= require theme/style-yellow
  *= require theme/style-yellow2
  *= require theme/style-red2
  *= require theme/style-violet3
  *= require theme/style-violet2
+ *= require theme/style-gray
+ *= require theme/style-yellow
+ *= require theme/style-aqua
  *= require theme/shCore
  *= require theme/shCoreDefault
  *= require theme/shCoreDjango

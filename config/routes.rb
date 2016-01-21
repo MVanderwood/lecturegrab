@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   patch '/discussions/:id' => 'discussions#update'
   delete '/discussions/:id' => 'discussions#destroy'
 
-  get '/users/:handle' => 'users#show'
   get '/users/:handle/queue' => 'queues#show'
   get '/users/:handle/options' => 'options#show'
 
