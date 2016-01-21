@@ -5,15 +5,14 @@ class Api::OptionsController < ApplicationController
   end
 
   def create
-    p params
-    option = Option.new({
+    option = Option.create({
       user_id: params[:user_id], 
       subject_id: Subject.find_by(name: params[:subject]).id, 
       delivery_interval: params[:delivery_interval], 
       delivery_method: params[:delivery_method]
     })
     option[:delivery_time] = option.set_time({time_of_day: params[:time], day: params[:day]})
-    job = QueueJob.delay(run_at: 1.minutes.from_now).send_lecture(option)
+    job = OptionJob.delay(run_at: option.delivery_time).send_lecture(option)
     option.job_id = job.id
     if option.save
       render json: {option: {subject: option.subject.name, deliveryDay: option.readable_weekday, deliveryHour: option.readable_time, deliveryInterval: option.delivery_interval, deliveryMethod: option.delivery_method, id: option.id}}
