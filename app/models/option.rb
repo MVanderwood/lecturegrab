@@ -2,14 +2,14 @@ class Option < ActiveRecord::Base
   belongs_to :user
   belongs_to :subject
   
-  validates :user_id, presence: true, numericality: { only_integer: true }
-  validates :subject_id, presence: true, numericality: { only_integer: true }
-  validates :job_id, presence: true, numericality: { only_integer: true }
-  validates :delivery_time, presence: true
-  validates :delivery_interval, presence: true
-  validates :delivery_interval, inclusion: { in: ["Just Once", "Weekly", "Biweekly", "Monthly"] }
-  validates :delivery_method, presence: true
-  validates :delivery_method, inclusion: { in: ["Text", "Email", "Queue"]}
+  # validates :user_id, presence: true, numericality: { only_integer: true }
+  # validates :subject_id, presence: true, numericality: { only_integer: true }
+  # validates :job_id, presence: true, numericality: { only_integer: true }
+  # validates :delivery_time, presence: true
+  # validates :delivery_interval, presence: true
+  # validates :delivery_interval, inclusion: { in: ["Just Once", "Weekly", "Biweekly", "Monthly"] }
+  # validates :delivery_method, presence: true
+  # validates :delivery_method, inclusion: { in: ["Text", "Email", "Queue"]}
 
   attr_reader :weekday_config
 

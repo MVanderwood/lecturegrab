@@ -9,6 +9,7 @@ class QueueJob < ActiveJob::Base
       lectures << subject_lecture if subject_lecture.user_lectures.exists?(user_id: option.user_id) == false
     end 
     lecture = lectures.sample
+    p "this works"
     if option.delivery_method == "Text"
       UserLecture.create({lecture_id: lecture.id, user_id: option.user_id, completion_date: DateTime.current})
       client = Twilio::REST::Client.new ENV["TWILIO_API_SID"], ENV["TWILIO_API_KEY"]
