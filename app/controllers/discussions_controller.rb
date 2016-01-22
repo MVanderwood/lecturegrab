@@ -17,8 +17,7 @@ class DiscussionsController < ApplicationController
   end
 
   def create
-    discussion = Discussion.create 
-    UserDiscussion.create owner_id: current_user.id, lecture_id: params[:lecture], subject_id: params[:subject]
+    discussion = Discussion.create({title: params[:discussionTitle], content: params[:discussionContent], owner_id: current_user.id})
     redirect_to "/discussions/#{discussion.id}"
   end
 

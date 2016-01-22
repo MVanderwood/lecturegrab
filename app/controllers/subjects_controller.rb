@@ -32,4 +32,11 @@ class SubjectsController < ApplicationController
     redirect_to "/subjects"
   end
 
+  def follow
+    subject = Subject.find_by(id: params[:id])
+    UserSubject.create({user_id: current_user.id, subject_id: subject.id})
+    flash[:success] = "Now following #{subject.name}!"
+    redirect_to "/subjects"
+  end
+
 end

@@ -45,182 +45,142 @@ Lecture.create({
 
 y = Subject.create{{
   name: "Biology",
-  description: ""
+  description: "Biology is a natural science concerned with the study of life and living organisms, including their structure, function, growth, evolution, distribution, and taxonomy."
 }}
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Evolution",
+  content: "A central organizing concept in biology is that life changes and develops through evolution, and that all life-forms known have a common origin. The theory of evolution postulates that all organisms on the Earth, both living and extinct, have descended from a common ancestor or an ancestral gene pool. This last universal common ancestor of all organisms is believed to have appeared about 3.5 billion years ago. Biologists generally regard the universality and ubiquity of the genetic code as definitive evidence in favor of the theory of universal common descent for all bacteria, archaea, and eukaryotes (see: origin of life). Introduced into the scientific lexicon by Jean-Baptiste de Lamarck in 1809, evolution was established by Charles Darwin fifty years later as a viable scientific model when he articulated its driving force: natural selection. (Alfred Russel Wallace is recognized as the co-discoverer of this concept as he helped research and experiment with the concept of evolution.) Evolution is now used to explain the great variations of life found on Earth. Darwin theorized that species and breeds developed through the processes of natural selection and artificial selection or selective breeding. Genetic drift was embraced as an additional mechanism of evolutionary development in the modern synthesis of the theory. The evolutionary history of the species—which describes the characteristics of the various species from which it descended—together with its genealogical relationship to every other species is known as its phylogeny. Widely varied approaches to biology generate information about phylogeny. These include the comparisons of DNA sequences conducted within molecular biology or genomics, and comparisons of fossils or other records of ancient organisms in paleontology. Biologists organize and analyze evolutionary relationships through various methods, including phylogenetics, phenetics, and cladistics. (For a summary of major events in the evolution of life as currently understood by biologists, see evolutionary timeline.)"
 })
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Homeostatis",
+  content: "Homeostasis is the ability of an open system to regulate its internal environment to maintain stable conditions by means of multiple dynamic equilibrium adjustments controlled by interrelated regulation mechanisms. All living organisms, whether unicellular or multicellular, exhibit homeostasis. To maintain dynamic equilibrium and effectively carry out certain functions, a system must detect and respond to perturbations. After the detection of a perturbation, a biological system normally responds through negative feedback. This means stabilizing conditions by either reducing or increasing the activity of an organ or system. One example is the release of glucagon when sugar levels are too low."
 })
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Ecology",
+  content: "Ecology studies the distribution and abundance of living organisms, and the interactions between organisms and their environment. The habitat of an organism can be described as the local abiotic factors such as climate and ecology, in addition to the other organisms and biotic factors that share its environment.One reason that biological systems can be difficult to study is that so many different interactions with other organisms and the environment are possible, even on small scales. A microscopic bacterium in a local sugar gradient is responding to its environment as much as a lion searching for food in the African savanna. For any species, behaviors can be co-operative, competitive, parasitic, or symbiotic. Matters become more complex when two or more species interact in an ecosystem. Ecological systems are studied at several different levels, from individuals and populations to ecosystems and the biosphere. The term population biology is often used interchangeably with population ecology, although population biology is more frequently used when studying diseases, viruses, and microbes, while population ecology is more commonly used when studying plants and animals. Ecology draws on many subdisciplines. Ethology studies animal behavior (particularly that of social animals such as primates and canids), and is sometimes considered a branch of zoology. Ethologists have been particularly concerned with the evolution of behavior and the understanding of behavior in terms of the theory of natural selection. In one sense, the first modern ethologist was Charles Darwin, whose book, The Expression of the Emotions in Man and Animals, influenced many ethologists to come. Biogeography studies the spatial distribution of organisms on the Earth, focusing on topics like plate tectonics, climate change, dispersal and migration, and cladistics."
 })
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Cytology",
+  content: "Cell biology (formerly called cytology, from the Greek κυτος, kytos, 'vessel') and otherwise known as molecular or cell biology, is a branch of biology that studies the different structures and functions of the cell and focuses mainly on the idea of the cell as the basic unit of life. Cell biology explains the structure, organization of the organelles they contain, their physiological properties, metabolic processes, signalling pathways, life cycle, and interactions with their environment. This is done both on a microscopic and molecular level as it encompasses prokaryotic cells and eukaryotic cells. Knowing the components of cells and how cells work is fundamental to all biological sciences it is also essential for research in bio-medical fields such as cancer, and other diseases. Research in cell biology is closely related to genetics, biochemistry, molecular biology, immunology, and developmental biology."
 })
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Meiosis",
+  content: "Meiosis is a specialized type of cell division that reduces the chromosome number by half. This process occurs in all sexually reproducing single-celled and multicellular eukaryotes, including animals, plants, and fungi. Errors in meiosis resulting in aneuploidy are the leading known cause of miscarriage and the most frequent genetic cause of developmental disabilities. In meiosis, DNA replication is followed by two rounds of cell division to produce four potential daughter cells, each with half the number of chromosomes as the original parent cell. The two meiotic divisions are known as Meiosis I and Meiosis II. Before meiosis begins, during S phase of the cell cycle, the DNA of each chromosome is replicated so that it consists of two identical sister chromatids, which remain held together through sister chromatid cohesion. This S-phase can be referred to as 'premeiotic S-phase' or 'meiotic S-phase.' Immediately following DNA replication, meiotic cells enter a prolonged G2-like stage known as meiotic prophase. During this time, homologous chromosomes pair with each other and undergo genetic recombination, a programmed process in which DNA is cut and then repaired, which allows them to exchange some of their genetic information. A subset of recombination events results in crossovers, which create physical links known as chiasmata (singular:chiasma, for the Greek letter Chi) between the homologous chromosomes. In most organisms, these links are essential to direct each pair of homologous chromosomes to segregate away from each other during Meiosis I, resulting in two haploid cells that half the number of chromosomes as the parent cell. During Meiosis II, the cohesion between sister chromatids is released and they segregate from one another, as during mitosis. In some cases all four of the meiotic products form gametes such as sperm, spores, or pollen. In female animals, three of the four meiotic products are typically eliminated by extrusion into polar bodies, and only one cell develops to produce an ovum."
 })
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Asexual Reprodcution",
+  content: "Asexual reproduction is a type of reproduction by which offspring arise from a single organism, and inherit the genes of that parent only; it does not involve the fusion of gametes and almost never changes the number of chromosomes. Asexual reproduction is the primary form of reproduction for single-celled organisms such as the archaebacteria, eubacteria, and protists. Many plants and fungi reproduce asexually as well. While all prokaryotes reproduce asexually (without the formation and fusion of gametes), mechanisms for lateral gene transfer such as conjugation, transformation and transduction are sometimes likened to sexual reproduction (or at least with sex, in the sense of genetic recombination). A complete lack of sexual reproduction is relatively rare among multicellular organisms, particularly animals. It is not entirely understood why the ability to reproduce sexually is so common among them. Current hypotheses suggest that asexual reproduction may have short term benefits when rapid population growth is important or in stable environments, while sexual reproduction offers a net advantage by allowing more rapid generation of genetic diversity, allowing adaptation to changing environments. Developmental constraints may underlie why few animals have relinquished sexual reproduction completely in their life-cycles. Another constraint on switching from sexual to asexual reproduction would be the concomitant loss of meiosis and the protective recombinational repair of DNA damage afforded as one function of meiosis. (Also see Meiosis section: Origin and function of meiosis)"
 })
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Histology",
+  content: "Histology is the study of the microscopic anatomy of cells and tissues of plants and animals. It is commonly performed by examining cells and tissues under a light microscope or electron microscope, which have been sectioned, stained and mounted on a microscope slide. Histological studies may be conducted using tissue culture, where live human or animal cells are isolated and maintained in an artificial environment for various research projects. The ability to visualize or differentially identify microscopic structures is frequently enhanced through the use of histological stains. Histology is an essential tool of biology and medicine. Histopathology, the microscopic study of diseased tissue, is an important tool in anatomical pathology, since accurate diagnosis of cancer and other diseases usually requires histopathological examination of samples. Trained physicians, frequently licensed pathologists, are the personnel who perform histopathological examination and provide diagnostic information based on their observations. The trained personnel who prepare histological specimens for examination are histotechnicians, histology technicians (HT), histology technologists (HTL), medical scientists, medical laboratory technicians, or biomedical scientists. Their field of study is called histotechnology."
 })
 Lecture.create({
   subject_id: y.id,
-  title: "",
-  content: ""
+  title: "Mycology",
+  content: "Mycology is the branch of biology concerned with the study of fungi, including their genetic and biochemical properties, their taxonomy and their use to humans as a source for tinder, medicine, wine, cheese, (edible mushrooms), and entheogens, as well as their dangers, such as poisoning or infection. A biologist specializing in mycology is called a mycologist. From mycology arose the field of phytopathology, the study of plant diseases, and the two disciplines remain closely related because the vast majority of 'plant' pathogens are fungi. Historically, mycology was a branch of botany because, although fungi are evolutionarily more closely related to animals than to plants, this was not recognized until a few decades ago. Pioneer mycologists included Elias Magnus Fries, Christian Hendrik Persoon, Anton de Bary, and Lewis David von Schweinitz. Many fungi produce toxins, antibiotics, and other secondary metabolites. For example, the cosmopolitan (worldwide) genus Fusarium and their toxins associated with fatal outbreaks of alimentary toxic aleukia in humans were extensively studied by Abraham Joffe. Fungi are fundamental for life on earth in their roles as symbionts, e.g. in the form of mycorrhizae, insect symbionts, and lichens. Many fungi are able to break down complex organic biomolecules such as lignin, the more durable component of wood, and pollutants such as xenobiotics, petroleum, and polycyclic aromatic hydrocarbons. By decomposing these molecules, fungi play a critical role in the global carbon cycle. Fungi and other organisms traditionally recognized as fungi, such as oomycetes and myxomycetes (slime molds), often are economically and socially important, as some cause diseases of animals (such as histoplasmosis) as well as plants (such as Dutch elm disease and Rice blast). Field meetings to find interesting species of fungi are known as 'forays', after the first such meeting organized by the Woolhope Naturalists' Field Club in 1868 and entitled 'A foray among the funguses'. Some fungi can cause disease in humans or other organisms. The study of pathogenic fungi is referred to as medical mycology."
 })
 
 z = Subject.create{{
   name: "Algebra",
-  description: ""
+  description: "Algebra is the study of mathematical symbols and the rules for manipulating these symbols; it is a unifying thread of almost all of mathematics. As such, it includes everything from elementary equation solving to the study of abstractions such as groups, rings, and fields."
 }}
 Lecture.create({
   subject_id: z.id,
-  title: "",
-  content: ""
+  title: "Elementary Algebra",
+  content: "Elementary algebra encompasses some of the basic concepts of algebra, one of the main branches of mathematics. It is typically taught to secondary school students and builds on their understanding of arithmetic. Whereas arithmetic deals with specified numbers, algebra introduces quantities without fixed values, known as variables. This use of variables entails a use of algebraic notation and an understanding of the general rules of the operators introduced in arithmetic. Unlike abstract algebra, elementary algebra is not concerned with algebraic structures outside the realm of real and complex numbers. The use of variables to denote quantities allows general relationships between quantities to be formally and concisely expressed, and thus enables solving a broader scope of problems. Most quantitative results in science and mathematics are expressed as algebraic equations."
 })
 Lecture.create({
   subject_id: z.id,
-  title: "",
-  content: ""
+  title: "Abstract Algebra",
+  content: "In algebra, which is a broad division of mathematics, abstract algebra (occasionally called modern algebra) is the study of algebraic structures. Algebraic structures include groups, rings, fields, modules, vector spaces, lattices, and algebras. The term abstract algebra was coined in the early 20th century to distinguish this area of study from the other parts of algebra. Algebraic structures, with their associated homomorphisms, form mathematical categories. Category theory is a powerful formalism for analyzing and comparing different algebraic structures. Universal algebra is a related subject that studies the nature and theories of various types of algebraic structures as a whole. For example, universal algebra studies the overall theory of groups, as distinguished from studying particular groups."
 })
 Lecture.create({
   subject_id: z.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: z.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: z.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: z.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: z.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: z.id,
-  title: "",
-  content: ""
+  title: "Linear Algebra",
+  content: "Linear algebra is the branch of mathematics concerning vector spaces and linear mappings between such spaces. It includes the study of lines, planes, and subspaces, but is also concerned with properties common to all vector spaces. The set of points with coordinates that satisfy a linear equation forms a hyperplane in an n-dimensional space. The conditions under which a set of n hyperplanes intersect in a single point is an important focus of study in linear algebra. Such an investigation is initially motivated by a system of linear equations containing several unknowns. Such equations are naturally represented using the formalism of matrices and vectors. Linear algebra is central to both pure and applied mathematics. For instance, abstract algebra arises by relaxing the axioms of a vector space, leading to a number of generalizations. Functional analysis studies the infinite-dimensional version of the theory of vector spaces. Combined with calculus, linear algebra facilitates the solution of linear systems of differential equations. Techniques from linear algebra are also used in analytic geometry, engineering, physics, natural sciences, computer science, computer animation, and the social sciences (particularly in economics). Because linear algebra is such a well-developed theory, nonlinear mathematical models are sometimes approximated by linear models."
 })
 
 a = Subject.create{{
   name: "Political Science",
-  description: ""
+  description: "Political science is a social science discipline that deals with systems of government and the analysis of political activity and political behavior.It deals extensively with the theory and practice of politics which is commonly thought of as the determining of the distribution of power and resources. Political scientists 'see themselves engaged in revealing the relationships underlying political events and conditions, and from these revelations they attempt to construct general principles about the way the world of politics works.'"
 }}
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "Political Science in the Soviet Union",
+  content: "In the Soviet Union, political studies were carried out under the guise of some other disciplines like theory of state and law, area studies, international relations, studies of labor movement, 'critique of bourgeois theories', etc. Soviet scholars were represented at the International Political Science Association (IPSA) since 1955 (since 1960 by the Soviet Association of Political and State Studies). In 1979, the 11th World Congress of IPSA took place in Moscow. Until the late years of the Soviet Union, political science as a field was subjected to tight control of the Communist Party of the Soviet Union and was thus subjected to distrust. Anti-communists accused political scientists of being 'false' scientists and of having served the old regime. After the fall of the Soviet Union, two of the major institutions dealing with political science, the Institute of Contemporary Social Theories and the Institute of International Affairs, were disbanded, and most of their members were left without jobs. These institutes were victims of the first wave of anticommunist opinion and ideological attacks. Today, the Russian Political Science Association unites professional political scientists from all around Russia."
 })
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "Legislature",
+  content: "A legislature is the law-making body of a political unit, usually a national government, that has power to enact, amend, and repeal public policy. Laws enacted by legislatures are known as legislation. Legislatures observe and steer governing actions and usually have exclusive authority to amend the budget or budgets involved in the process. The most common names for national legislatures are 'parliament' and 'congress'. The members of a legislature are called legislators."
 })
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "Exective Area",
+  content: "The executive is the organ that exercises authority in and holds responsibility for the governance of a state. The executive executes and enforces law. In political systems based on the principle of separation of powers, authority is distributed among several branches (executive, legislative, judicial) — an attempt to prevent the concentration of power in the hands of a small group of people. In such a system, the executive does not pass laws (the role of the legislature) or interpret them (the role of the judiciary). Instead, the executive enforces the law as written by the legislature and interpreted by the judiciary. The executive can be the source of certain types of law, such as a decree or executive order. Executive bureaucracies are commonly the source of regulations. In the Westminster political system, the principle of separation of powers in not as entrenched. Members of the executive, called ministers, are also members of the legislature, and hence play an important part in both the writing and enforcing of law. In this context, the executive consists of leader(s) of an office or multiple offices. Specifically, the top leadership roles of the executive branch may include: -Head of state—often the leader, the president or monarch, the chief public representative and living symbol of national unity. -Head of government—often the de facto leader, prime minister, overseeing the administration of all affairs of state. -Defence minister—overseeing the armed forces, determining military policy and managing external safety. -Interior minister—overseeing the police forces, enforcing the law and managing internal safety. -Foreign minister—overseeing the diplomatic service, determining foreign policy and managing foreign relations. -Finance minister—overseeing the treasury, determining fiscal policy and managing national budget. -Justice minister—overseeing criminal prosecutions, corrections, enforcement of court orders. In a presidential system, the leader of the executive is both the head of state and head of government. In a parliamentary system, a cabinet minister responsible to the legislature is the head of government, while the head of state is usually a largely ceremonial monarch or president."
 })
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "Judicial Area",
+  content: "The judiciary (also known as the judicial system or court system) is the system of courts that interprets and applies the law in the name of the state. The judiciary also provides a mechanism for the resolution of disputes. Under the doctrine of the separation of powers, the judiciary generally does not make law (that is, in a plenary fashion, which is the responsibility of the legislature) or enforce law (which is the responsibility of the executive), but rather interprets law and applies it to the facts of each case. This branch of the state is often tasked with ensuring equal justice under law. In many jurisdictions the judicial branch has the power to change laws through the process of judicial review. Courts with judicial review power, may annul the laws and rules of the state when it finds them incompatible with a higher norm, such as primary legislation, the provisions of the constitution or international law. Judges constitute a critical force for interpretation and implementation of a constitution, thus de facto in common law countries creating the body of constitutional law. For a people to establish and keep the 'Rule of Law' as the operative norm in social constructs great care must be taken in the election and/or appointment of unbiased and thoughtful legal scholars who's loyalty to an oath of office is without reproach. If law is to govern and find acceptance generally courts must exercise fidelity to justice which means affording those subject to its jurisdictional scope the greatest presumption of inherent cultural relevance within this framework."
 })
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "Internation Law",
+  content: "International law is the set of rules generally regarded and accepted as binding in relations between states and between nations. It serves as a framework for the practice of stable and organized international relations. International law differs from state-based legal systems in that it is primarily applicable to countries rather than to private citizens. National law may become international law when treaties delegate national jurisdiction to supranational tribunals such as the European Court of Human Rights or the International Criminal Court. Treaties such as the Geneva Conventions may require national law to conform to respective parts. Much of international law is consent-based governance. This means that a state member is not obliged to abide by this type of international law, unless it has expressly consented to a particular course of conduct. This is an issue of state sovereignty. However, other aspects of international law are not consent-based but still are obligatory upon state and non-state actors such as customary international law and peremptory norms (jus cogens)."
 })
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "Westphalian Sovereignty",
+  content: "Westphalian sovereignty is the principle of international law that each nation state has sovereignty over its territory and domestic affairs, to the exclusion of all external powers, on the principle of non-interference in another country's domestic affairs, and that each state (no matter how large or small) is equal in international law. The doctrine is named after the Peace of Westphalia, signed in 1648, which ended the Thirty Years' War, in which the major continental European states – the Holy Roman Empire, Spain, France, Sweden and the Dutch Republic – agreed to respect one another's territorial integrity. As European influence spread across the globe, the Westphalian principles, especially the concept of sovereign states, became central to international law and to the prevailing world order. Scholars of international relations have identified the modern, Western-originated, international system of states, multinational corporations, and organizations, as having begun at the Peace of Westphalia. Both the basis and the conclusion of this view have been attacked by some revisionist academics and politicians, with revisionists questioning the significance of the Peace, and some commentators and politicians attacking the Westphalian system of sovereign nation-states."
 })
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "The United States Constitution",
+  content: "The United States Constitution is the supreme law of the United States of America. The Constitution, originally comprising seven articles, delineates the national frame of government. Its first three articles entrench the doctrine of the separation of powers, whereby the federal government is divided into three branches: the legislative, consisting of the bicameral Congress; the executive, consisting of the President; and the judicial, consisting of the Supreme Court and other federal courts. Articles Four, Five and Six entrench concepts of federalism, describing the rights and responsibilities of state governments and of the states in relationship to the federal government. Article Seven establishes the procedure subsequently used by the thirteen States to ratify it. Since the Constitution came into force in 1789, it has been amended twenty-seven times. In general, the first ten amendments, known collectively as the Bill of Rights, offer specific protections of individual liberty and justice and place restrictions on the powers of government. The majority of the seventeen later amendments expand individual civil rights. Others address issues related to federal authority or modify government processes and procedures. Amendments to the United States Constitution, unlike ones made to many constitutions world-wide, are appended to the end of the document. At seven articles and twenty-seven amendments, it is the shortest written constitution in force. All five pages of the original U.S. Constitution are written on parchment. The Constitution is interpreted, supplemented, and implemented by a large body of constitutional law. The Constitution of the United States is the first constitution of its kind, and has influenced the constitutions of other nations."
 })
 Lecture.create({
   subject_id: a.id,
-  title: "",
-  content: ""
+  title: "Decentralization",
+  content: "Decentralization or decentralisation is the process of redistributing or dispersing functions, powers, people or things away from a central location or authority. While centralization, especially in the governmental sphere, is widely studied and practiced, there is no common definition or understanding of decentralization. The meaning of decentralization may vary in part because of the different ways it is applied. Concepts of decentralization have been applied to group dynamics and management science in private businesses and organizations, political science, law and public administration, economics and technology."
 })
 
 b = Subject.create{{
   name: "Botany",
-  description: ""
+  description: "The scientific study of plants, including their physiology, structure, genetics, ecology, distribution, classification, and economic importance."
 }}
 Lecture.create({
   subject_id: b.id,
-  title: "",
-  content: ""
+  title: "Euphorbia",
+  content: "Euphorbia (spurge) is a very large and diverse genus of flowering plants in the spurge family (Euphorbiaceae). Sometimes in ordinary English, 'euphorbia' is used to refer to the entire Euphorbiaceae family (as the type genus), not just to members of the genus. Some euphorbias are well known and widely commercially available, such as Poinsettias at Christmas. Some are commonly cultivated as ornamentals, or collected and highly valued for the aesthetic appearance of their unique floral structures, such as the Crown of Thorns plant. Euphorbias from the deserts of Southern Africa and Madagascar have evolved physical characteristics and forms similar to cacti of North and South America, so they (along with various other kinds of plants) are often incorrectly referred to as 'cacti', although they are far from being related as plants, see below. Some are used as ornamentals in landscaping, because of beautiful or striking overall forms, and drought and heat tolerance. Botanists may be fascinated by the diversity or bizarreness of some of the floral structures, and by the range of growth forms and adaptations to such a wide range of habitats. Euphorbias range from tiny annual plants to large and long-lived trees. The genus has over or about 2,000 members, making it one of the largest genera of flowering plants. It also has one of the largest ranges of chromosome counts, along with Rumex and Senecio. Euphorbia antiquorum is the type species for the genus Euphorbia. It was first described by Carl Linnaeus in 1753 in Species Plantarum. The plants share the feature of having a poisonous, milky, white latex-like sap, and unusual and unique kind of floral structures. The genus may be described by properties of its members' gene sequences, or by the shape and form (morphology) of its heads of flowers. When viewed as a whole, the head of flowers looks like a single flower (a pseudanthium). It has a unique kind of pseudanthium, called a cyathium, where each flower in the head is reduced to its barest essential part needed for sexual reproduction. The individual flowers are either male or female, with the male flowers reduced to only the stamen, and the females to the pistil. These flowers have no sepals, petals, or other parts that are typical of flowers in other kinds of plants. Structures supporting the flower head and beneath that have evolved to attract pollinators with nectar, and with shapes and colors that function the way petals and other flower parts do in other flowers. It is the only genus of plants that has all three kinds of photosynthesis, CAM, C3, and C4."
 })
 Lecture.create({
   subject_id: b.id,
-  title: "",
-  content: ""
+  title: "Angiospermae",
+  content: "The flowering plants (angiosperms), also known as Angiospermae or Magnoliophyta, are the most diverse group of land plants. Angiosperms are seed-producing plants like the gymnosperms and can be distinguished from the gymnosperms by characteristics including flowers, endosperm within the seeds, and the production of fruits that contain the seeds. Etymologically, angiosperm means a plant that produces seeds within an enclosure, in other words, a fruiting plant. The ancestors of flowering plants diverged from gymnosperms around 202–245 million years ago, and the first flowering plants known to exist are from 160 million years ago. They diversified enormously during the Lower Cretaceous and became widespread around 120 million years ago, but replaced conifers as the dominant trees only around 60–100 million years ago."
 })
 Lecture.create({
   subject_id: b.id,
-  title: "",
-  content: ""
+  title: "Monocots", 
+  content: "Monocotyledons, more properly referred to as monocots, are flowering plants (angiosperms) whose seeds typically contain only one embryonic leaf, or cotyledon. They constitute one of the major groups into which the flowering plants have traditionally been divided, the rest of the flowering plants having two cotyledons and therefore classified as dicotyledons, or dicots. However, molecular phylogenetic research has shown that while the monocots form a monophyletic group or clade (comprising all the descendants of a common ancestor), the dicots do not. Monocots have almost always been recognized as a group, but with various taxonomic ranks and under several different names. The APG III system of 2009 recognises a clade called 'monocots' but does not assign it to a taxonomic rank. The monocots include about 60,000 species. The largest family in this group (and in the flowering plants as a whole) by number of species are the orchids (family Orchidaceae), with more than 20,000 species. About half as many species belong to the true grasses (Poaceae), who are economically the most important family of monocots. In agriculture the majority of the biomass produced comes from monocots. These include not only major grains (rice, wheat, maize, etc.), but also forage grasses, sugar cane, and the bamboos. Other economically important monocot crops include various palms (Arecaceae), bananas (Musaceae), gingers and their relatives, turmeric and cardamom (Zingiberaceae) and the onions and garlic family (Amaryllidaceae). Additionally most of the horticultural bulbs, plants cultivated for their blooms, are monocots, such as lilies, daffodils, irises, amaryllis, cannas, bluebells and tulips."
 })
 Lecture.create({
   subject_id: b.id,
-  title: "",
-  content: ""
+  title: "Dicots",
+  content: "The dicotyledons, also known as dicots (or more rarely dicotyls), were one of the two groups into which all the flowering plants or angiosperms were formerly divided. The name refers to one of the typical characteristics of the group, namely that the seed has two embryonic leaves or cotyledons. There are around 200,000 species within this group. The other group of flowering plants were called monocotyledons or monocots, typically having one cotyledon. Historically, these two groups formed the two divisions of the flowering plants. Largely from the 1990s onwards, molecular phylogenetic research confirmed what had already been suspected, namely that dicotyledons are not a group made up of all the descendants of a common ancestor (i.e. they are not a monophyletic group). Rather, a number of lineages, such as the magnoliids and groups now collectively known as the basal angiosperms, diverged earlier than the monocots did. The traditional dicots are thus a paraphyletic group. The largest clade of the dicotyledons are known as the eudicots. They are distinguished from all other flowering plants by the structure of their pollen. Other dicotyledons and monocotyledons have monosulcate pollen, or forms derived from it, whereas eudicots have tricolpate pollen, or derived forms, the pollen having three or more pores set in furrows called colpi."
 })
 Lecture.create({
   subject_id: b.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: b.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: b.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: b.id,
-  title: "",
-  content: ""
+  title: "Photosynthesis",
+  content: "Photosynthesis is a process used by plants and other organisms to convert light energy, normally from the Sun, into chemical energy that can be later released to fuel the organisms' activities. This chemical energy is stored in carbohydrate molecules, such as sugars, which are synthesized from carbon dioxide and water – hence the name photosynthesis, from the Greek φῶς, phōs, 'light', and σύνθεσις, synthesis, 'putting together'. In most cases, oxygen is also released as a waste product. Most plants, most algae, and cyanobacteria perform photosynthesis; such organisms are called photoautotrophs. Photosynthesis maintains atmospheric oxygen levels and supplies all of the organic compounds and most of the energy necessary for life on Earth. Although photosynthesis is performed differently by different species, the process always begins when energy from light is absorbed by proteins called reaction centres that contain green chlorophyll pigments. In plants, these proteins are held inside organelles called chloroplasts, which are most abundant in leaf cells, while in bacteria they are embedded in the plasma membrane. In these light-dependent reactions, some energy is used to strip electrons from suitable substances, such as water, producing oxygen gas. The hydrogen freed by water splitting is used in the creation of two further compounds: reduced nicotinamide adenine dinucleotide phosphate (NADPH) and adenosine triphosphate (ATP), the 'energy currency' of cells. In plants, algae and cyanobacteria, sugars are produced by a subsequent sequence of light-independent reactions called the Calvin cycle, but some bacteria use different mechanisms, such as the reverse Krebs cycle. In the Calvin cycle, atmospheric carbon dioxide is incorporated into already existing organic carbon compounds, such as ribulose bisphosphate (RuBP). Using the ATP and NADPH produced by the light-dependent reactions, the resulting compounds are then reduced and removed to form further carbohydrates, such as glucose."
 })
 
 c = Subject.create{{
@@ -270,139 +230,92 @@ Lecture.create({
 
 d = Subject.create{{
   name: "Economics",
-  description: ""
+  description: "Economics is the social science that describes the factors that determine the production, distribution and consumption of goods and services."
 }}
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "Microeconomics",
+  content: "Microeconomics (from Greek prefix mikro- meaning 'small') is a branch of economics that studies the behavior of individuals and firms in making decisions regarding the allocation of limited resources. Typically, it applies to markets where goods or services are bought and sold. Microeconomics examines how these decisions and behaviors affect the supply and demand for goods and services, which determines prices, and how prices, in turn, determine the quantity supplied and quantity demanded of goods and services. This is in contrast to macroeconomics, which involves the 'sum total of economic activity, dealing with the issues of growth, inflation, and unemployment.' Microeconomics also deals with the effects of national economic policies (such as changing taxation levels) on the aforementioned aspects of the economy. Particularly in the wake of the Lucas critique, much of modern macroeconomic theory has been built upon 'microfoundations'—i.e. based upon basic assumptions about micro-level behavior. One goal of microeconomics is to analyze the market mechanisms that establish relative prices among goods and services and allocate limited resources among alternative uses. Microeconomics also analyzes market failure, where markets fail to produce efficient results, and describes the theoretical conditions needed for perfect competition. Significant fields of study in microeconomics include general equilibrium, markets under asymmetric information, choice under uncertainty and economic applications of game theory. Also considered is the elasticity of products within the market system."
 })
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "Macroeconomics",
+  content: "Macroeconomics (from the Greek prefix makro- meaning 'large' and economics) is a branch of economics dealing with the performance, structure, behavior, and decision-making of an economy as a whole, rather than individual markets. This includes national, regional, and global economies. With microeconomics, macroeconomics is one of the two most general fields in economics. Macroeconomists study aggregated indicators such as GDP, unemployment rates, and price indices, and the interrelations among the different sectors of the economy, to better understand how the whole economy functions. Macroeconomists develop models that explain the relationship between such factors as national income, output, consumption, unemployment, inflation, savings, investment, international trade and international finance. In contrast, microeconomics is primarily focused on the actions of individual agents, such as firms and consumers, and how their behavior determines prices and quantities in specific markets While macroeconomics is a broad field of study, there are two areas of research that are emblematic of the discipline: the attempt to understand the causes and consequences of short-run fluctuations in national income (the business cycle), and the attempt to understand the determinants of long-run economic growth (increases in national income). Macroeconomic models and their forecasts are used by governments to assist in the development and evaluation of economic policy."
 })
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "The Business Cycle",
+  content: "The business cycle or economic cycle is the downward and upward movement of gross domestic product (GDP) around its long-term growth trend. These fluctuations typically involve shifts over time between periods of relatively rapid economic growth (expansions or booms), and periods of relative stagnation or decline (contractions or recessions). Used in the indefinite sense, a business cycle is a period of time containing a single boom and contraction in sequence. Business cycles are usually measured by considering the growth rate of real gross domestic product. Despite being termed cycles, these fluctuations in economic activity can prove unpredictable. A boom-and-bust cycle is one in which the expansions are rapid and the contractions are steep and severe."
 })
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "Economic Model",
+  content: "In economics, a model is a theoretical construct representing economic processes by a set of variables and a set of logical and/or quantitative relationships between them. The economic model is a simplified framework designed to illustrate complex processes, often but not always using mathematical techniques. Frequently, economic models posit structural parameters. Structural parameters are underlying parameters in a model or class of models. A model may have various parameters and those parameters may change to create various properties. Methodological uses of models include investigation, theorizing, and fitting theories to the world."
 })
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "Opportunity Cost",
+  content: "In microeconomic theory, the opportunity cost of a choice is the value of the best alternative forgone, where a choice needs to be made between several mutually exclusive alternatives given limited resources. Assuming the best choice is made, it is the 'cost' incurred by not enjoying the benefit that would be had by taking the second best choice available. The New Oxford American Dictionary defines it as 'the loss of potential gain from other alternatives when one alternative is chosen'. Opportunity cost is a key concept in economics, and has been described as expressing 'the basic relationship between scarcity and choice'. The notion of opportunity cost plays a crucial part in ensuring that scarce resources are used efficiently. Thus, opportunity costs are not restricted to monetary or financial costs: the real cost of output forgone, lost time, pleasure or any other benefit that provides utility should also be considered opportunity costs."
 })
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "Supply and Demand",
+  content: "In microeconomics, supply and demand is an economic model of price determination in a market. It concludes that in a competitive market, the unit price for a particular good, or other traded item such as labor or liquid financial assets, will vary until it settles at a point where the quantity demanded (at the current price) will equal the quantity supplied (at the current price), resulting in an economic equilibrium for price and quantity transacted."
 })
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "Marxism",
+  content: "Marxist (later, Marxian) economics descends from classical economics. It derives from the work of Karl Marx. The first volume of Marx's major work, Das Kapital, was published in German in 1867. In it, Marx focused on the labour theory of value and the theory of surplus value which, he believed, explained the exploitation of labour by capital. The labour theory of value held that the value of an exchanged commodity was determined by the labour that went into its production and the theory of surplus value demonstrated how the workers only got paid a proportion of the value their work had created."
 })
 Lecture.create({
   subject_id: d.id,
-  title: "",
-  content: ""
+  title: "Keynesian Economics",
+  content: "Keynesian economics derives from John Maynard Keynes, in particular his book The General Theory of Employment, Interest and Money (1936), which ushered in contemporary macroeconomics as a distinct field. The book focused on determinants of national income in the short run when prices are relatively inflexible. Keynes attempted to explain in broad theoretical detail why high labour-market unemployment might not be self-correcting due to low 'effective demand' and why even price flexibility and monetary policy might be unavailing. The term 'revolutionary' has been applied to the book in its impact on economic analysis. Keynesian economics has two successors. Post-Keynesian economics also concentrates on macroeconomic rigidities and adjustment processes. Research on micro foundations for their models is represented as based on real-life practices rather than simple optimizing models. It is generally associated with the University of Cambridge and the work of Joan Robinson. New-Keynesian economics is also associated with developments in the Keynesian fashion. Within this group researchers tend to share with other economists the emphasis on models employing micro foundations and optimizing behavior but with a narrower focus on standard Keynesian themes such as price and wage rigidity. These are usually made to be endogenous features of the models, rather than simply assumed as in older Keynesian-style ones."
 })
 
 e = Subject.create{{
   name: "Chemistry",
-  description: ""
+  description: "Chemistry is a branch of physical science that studies the composition, structure, properties and change of matter. Chemistry includes topics such as the properties of individual atoms, how atoms form chemical bonds to create chemical compounds, the interactions of substances through intermolecular forces that give matter its general properties, and the interactions between substances through chemical reactions to form different substances."
 }}
 Lecture.create({
   subject_id: e.id,
-  title: "",
-  content: ""
+  title: "Elements",
+  content: "A chemical element is a pure substance which is composed of a single type of atom, characterized by its particular number of protons in the nuclei of its atoms, known as the atomic number and represented by the symbol Z. The mass number is the sum of the number of protons and neutrons in a nucleus. Although all the nuclei of all atoms belonging to one element will have the same atomic number, they may not necessarily have the same mass number; atoms of an element which have different mass numbers are known as isotopes. For example, all atoms with 6 protons in their nuclei are atoms of the chemical element carbon, but atoms of carbon may have mass numbers of 12 or 13. The standard presentation of the chemical elements is in the periodic table, which orders elements by atomic number. The periodic table is arranged in groups, or columns, and periods, or rows. The periodic table is useful in identifying periodic trends."
 })
 Lecture.create({
   subject_id: e.id,
-  title: "",
-  content: ""
+  title: "Bonding",
+  content: "Atoms sticking together in molecules or crystals are said to be bonded with one another. A chemical bond may be visualized as the multipole balance between the positive charges in the nuclei and the negative charges oscillating about them. More than simple attraction and repulsion, the energies and distributions characterize the availability of an electron to bond to another atom. A chemical bond can be a covalent bond, an ionic bond, a hydrogen bond or just because of Van der Waals force. Each of these kinds of bonds is ascribed to some potential. These potentials create the interactions which hold atoms together in molecules or crystals. In many simple compounds, valence bond theory, the Valence Shell Electron Pair Repulsion model (VSEPR), and the concept of oxidation number can be used to explain molecular structure and composition. An ionic bond is formed when a metal loses one or more of its electrons, becoming a positively charged cation, and the electrons are then gained by the non-metal atom, becoming a negatively charged anion. The two oppositely charged ions attract one another, and the ionic bond is the electrostatic force of attraction between them. For example, sodium (Na), a metal, loses one electron to become an Na+ cation while chlorine (Cl), a non-metal, gains this electron to become Cl−. The ions are held together due to electrostatic attraction, and that compound sodium chloride (NaCl), or common table salt, is formed. In the methane molecule (CH4), the carbon atom shares a pair of valence electrons with each of the four hydrogen atoms. Thus, the octet rule is satisfied for C-atom (it has eight electrons in its valence shell) and the duet rule is satisfied for the H-atoms (they have two electrons in their valence shells). In a covalent bond, one or more pairs of valence electrons are shared by two atoms: the resulting electrically neutral group of bonded atoms is termed a molecule. Atoms will share valence electrons in such a way as to create a noble gas electron configuration (eight electrons in their outermost shell) for each atom. Atoms that tend to combine in such a way that they each have eight electrons in their valence shell are said to follow the octet rule. However, some elements like hydrogen and lithium need only two electrons in their outermost shell to attain this stable configuration; these atoms are said to follow the duet rule, and in this way they are reaching the electron configuration of the noble gas helium, which has two electrons in its outer shell."
+  })
+Lecture.create({
+  subject_id: e.id,
+  title: "Chemical Reaction",
+  content: "When a chemical substance is transformed as a result of its interaction with another substance or with energy, a chemical reaction is said to have occurred. A chemical reaction is therefore a concept related to the 'reaction' of a substance when it comes in close contact with another, whether as a mixture or a solution; exposure to some form of energy, or both. It results in some energy exchange between the constituents of the reaction as well as with the system environment, which may be designed vessels—often laboratory glassware. Chemical reactions can result in the formation or dissociation of molecules, that is, molecules breaking apart to form two or more smaller molecules, or rearrangement of atoms within or across molecules. Chemical reactions usually involve the making or breaking of chemical bonds. Oxidation, reduction, dissociation, acid-base neutralization and molecular rearrangement are some of the commonly used kinds of chemical reactions. A chemical reaction can be symbolically depicted through a chemical equation. While in a non-nuclear chemical reaction the number and kind of atoms on both sides of the equation are equal, for a nuclear reaction this holds true only for the nuclear particles viz. protons and neutrons. The sequence of steps in which the reorganization of chemical bonds may be taking place in the course of a chemical reaction is called its mechanism. A chemical reaction can be envisioned to take place in a number of steps, each of which may have a different speed. Many reaction intermediates with variable stability can thus be envisaged during the course of a reaction. Reaction mechanisms are proposed to explain the kinetics and the relative product mix of a reaction. Many physical chemists specialize in exploring and proposing the mechanisms of various chemical reactions. Several empirical rules, like the Woodward–Hoffmann rules often come in handy while proposing a mechanism for a chemical reaction."
 })
 Lecture.create({
   subject_id: e.id,
-  title: "",
-  content: ""
+  title: "Organic Chemistry",
+  content: "Organic chemistry is a chemistry subdiscipline involving the scientific study of the structure, properties, and reactions of organic compounds and organic materials, i.e., matter in its various forms that contain carbon atoms. Study of structure includes many physical and chemical methods to determine the chemical composition and the chemical constitution of organic compounds and materials. Study of properties includes both physical properties and chemical properties, and uses similar methods as well as methods to evaluate chemical reactivity, with the aim to understand the behavior of the organic matter in its pure form (when possible), but also in solutions, mixtures, and fabricated forms. The study of organic reactions includes probing their scope through use in preparation of target compounds (e.g., natural products, drugs, polymers, etc.) by chemical synthesis, as well as the focused study of the reactivities of individual organic molecules, both in the laboratory and via theoretical (in silico) study. The range of chemicals studied in organic chemistry include hydrocarbons (compounds containing only carbon and hydrogen), as well as myriad compositions based always on carbon, but also containing other elements, especially oxygen, nitrogen, sulfur, phosphorus (these, included in many organic chemicals in biology) and the radiostable elements of the halogens."
 })
 Lecture.create({
   subject_id: e.id,
-  title: "",
-  content: ""
+  title: "Organic Compounds",
+  content: "An organic compound is any member of a large class of gaseous, liquid, or solid chemical compounds whose molecules contain carbon. For historical reasons discussed below, a few types of carbon-containing compounds, such as carbides, carbonates, simple oxides of carbon (such as CO and CO2), and cyanides are considered inorganic. The distinction between organic and inorganic carbon compounds, while 'useful in organizing the vast subject of chemistry...is somewhat arbitrary'. Organic chemistry is the science concerned with all aspects of organic compounds. Organic synthesis is the methodology of their preparation."
 })
 Lecture.create({
   subject_id: e.id,
-  title: "",
-  content: ""
+  title: "Nuclear Chemistry",
+  content: "Nuclear chemistry is the subfield of chemistry dealing with radioactivity, nuclear processes, such as nuclear transmutation, and nuclear properties. It is the chemistry of radioactive elements such as the actinides, radium and radon together with the chemistry associated with equipment (such as nuclear reactors) which are designed to perform nuclear processes. This includes the corrosion of surfaces and the behavior under conditions of both normal and abnormal operation (such as during an accident). An important area is the behavior of objects and materials after being placed into a nuclear waste storage or disposal site. It includes the study of the chemical effects resulting from the absorption of radiation within living animals, plants, and other materials. The radiation chemistry controls much of radiation biology as radiation has an effect on living things at the molecular scale, to explain it another way the radiation alters the biochemicals within an organism, the alteration of the biomolecules then changes the chemistry which occurs within the organism, this change in chemistry then can lead to a biological outcome. As a result, nuclear chemistry greatly assists the understanding of medical treatments (such as cancer radiotherapy) and has enabled these treatments to improve. It includes the study of the production and use of radioactive sources for a range of processes. These include radiotherapy in medical applications; the use of radioactive tracers within industry, science and the environment; and the use of radiation to modify materials such as polymers. It also includes the study and use of nuclear processes in non-radioactive areas of human activity. For instance, nuclear magnetic resonance (NMR) spectroscopy is commonly used in synthetic organic chemistry and physical chemistry and for structural analysis in macromolecular chemistry."
 })
 Lecture.create({
   subject_id: e.id,
-  title: "",
-  content: ""
+  title: "Esters",
+  content: "In chemistry, esters are chemical compounds derived from an acid (organic or inorganic) in which at least one -OH (hydroxyl) group is replaced by an -O-alkyl (alkoxy) group. Usually, esters are derived from a carboxylic acid and an alcohol. Glycerides, which are fatty acid esters of glycerol, are important esters in biology, being one of the main classes of lipids, and making up the bulk of animal fats and vegetable oils. Esters with low molecular weight are commonly used as fragrances and found in essential oils and pheromones. Phosphoesters form the backbone of DNA molecules. Nitrate esters, such as nitroglycerin, are known for their explosive properties, while polyesters are important plastics, with monomers linked by ester moieties."
 })
 Lecture.create({
   subject_id: e.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: e.id,
-  title: "",
-  content: ""
+  title: "Aldehydes",
+  content: "An aldehyde or alkanal is an organic compound containing a formyl group. The formyl group is a functional group, with the structure R-CHO, consisting of a carbonyl center (a carbon double bonded to oxygen) bonded to hydrogen and an R group, which is any generic alkyl or side chain. The group without R is called the aldehyde group or formyl group. Aldehydes differ from ketones in that the carbonyl is placed at the end of a carbon skeleton rather than between two carbon atoms. Aldehydes are common in organic chemistry. Many fragrances are aldehydes."
 })
 
-f = Subject.create{{
-  name: "Physics",
-  description: ""
-}}
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-Lecture.create({
-  subject_id: f.id,
-  title: "",
-  content: ""
-})
-User.create({
-  /gufhkfhkd
-  jljlhl
-  })
+# 1 m.b.vanderwood@gmail.com  $2a$10$Uhgu/MUHQe2YvAiUqaCxSewQbo4T4pfwS/NuatUNu960K/EkiL0wu      2016-01-20 23:31:32.880897  4 2016-01-20 23:31:32.89138 2016-01-20 23:28:27.427289  ::1 ::1 2015-12-13 22:59:49.302301  2016-01-20 23:31:32.893405  Michael Vanderwood  administrator 8167296823  o037

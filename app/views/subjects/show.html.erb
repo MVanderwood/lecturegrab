@@ -2,7 +2,7 @@
 <h4><%= @subject.description %></h4>
 <p>Lectures: </p>
 <ul>
-  <% @subject.lectures[0..2].each do |lecture| %>
+  <% @subject.lectures.shuffle[0..2].each do |lecture| %>
     <li><%= link_to lecture.title, "/lectures/#{lecture.id}" %></li>
     <ul>
       <li><%= lecture.content[0..200] %>...</li>

@@ -4,6 +4,6 @@ class Post < ActiveRecord::Base
 
   validates :discussion_id, presence: true, numericality: { only_integer: true }
   validates :user_id, presence: true, numericality: { only_integer: true }
-  validates :content, presence: true, length: { minimum: 30 }
+  # validates :content, presence: true, length: { minimum: 30 }
 
 end
