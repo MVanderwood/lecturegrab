@@ -1,7 +1,11 @@
 class LecturesController < ApplicationController
 
   def index
-    @lectures = Lecture.all
+    if params[:subject]
+      @lectures = Lecture.where(subject_id: params[:subject])
+    else
+      @lectures = Lecture.all
+    end
   end
 
   def new
@@ -10,6 +14,9 @@ class LecturesController < ApplicationController
 
   def show
     @lecture = Lecture.find_by id: params[:id]
+    unless UserLecture.where("lecture_id = ? AND user_id = ?", @lecture.id, current_user.id)
+      UserLecture.create({user_id: current_user.id, lecture_id: @lecture.id, completion_date: DateTime.current}) 
+    end
   end
 
   def edit
@@ -18,7 +25,6 @@ class LecturesController < ApplicationController
 
   def create
     lecture = Lecture.create subject_id: params[:subject], title: params[:title], content: params[:content]
-    UserLecture.create user_id: current_user.id, lecture_id: lecture.id
     redirect_to "/lectures/#{lecture.id}"
   end
 

@@ -1,17 +1,24 @@
-<%= link_to "Add a new Subject", "/subjects/new" %>
 <% @subjects.each do |subject| %>
-  <h2><%= link_to subject.name, "/subjects/#{subject.id}" %></h2>
+  <span><h2><%= subject.name %></h2>  <h4><%= link_to "Follow #{subject.name}", "/subjects/#{subject.id}", method: :post %></h4></span>
   <h4><%= subject.description %></h4>
   <p>Lectures: </p>
   <ul>
-    <% subject.lectures[0..2].each do |lecture| %>
+    <% subject.lectures.shuffle[0..2].each do |lecture| %>
       <li><%= link_to lecture.title, "/lectures/#{lecture.id}" %></li>
     <% end %>
+    <br>
+    <a href="/lectures?subject=<%= subject.id %>"><button type="button" class="btn btn-ar btn-sm btn-primary">More Lectures on this Subject</button></a>
   </ul>
   <p>Discussions: </p>
   <ul>
-    <% subject.discussions[0..2].each do |discussion| %>
+    <% subject.discussions.shuffle[0..2].each do |discussion| %>
     <li><% link_to discussion.title, "/discussions/#{discussion.id}" %></li>
+    <% end %>
+    <%=  %>
+    <br>
+    <a href="/discussions?subject=<%= subject.id %>"><button type="button" class="btn btn-ar btn-sm btn-primary">More Discussions on this Subject</button></a>
+    <% if user_signed_in? %>
+      <a href="/discussions/new?subject=<%= subject.id %>"><button type="button" class="btn btn-ar btn-sm btn-primary">Create a Discussion</button></a>
     <% end %>
   </ul>
 <% end %>

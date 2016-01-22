@@ -8,6 +8,6 @@ class Discussion < ActiveRecord::Base
   has_many :discussion_followers
   has_many :followers, through: :discussion_followers, foreign_key: :discussion_id
 
-  validates :title, presence: true
-  validates :content, presence: true
+  # validates :title, presence: true
+  # validates :content, presence: true
 end 

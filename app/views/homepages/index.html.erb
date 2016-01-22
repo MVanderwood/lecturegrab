@@ -1,5 +1,5 @@
 <div class="col-md-4">
-    <h2>Lectures</h2>
+    <h2><%= link_to "Lectures", "/lectures" %></h2>
     <div class="home-page-slider"> 
         <% @lectures.each do |lecture| %>
             <a href="/lectures/<%= lecture.id %>">

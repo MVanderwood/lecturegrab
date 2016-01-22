@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/subjects/create' => 'subjects#create'
   patch '/subjects/:id' => 'subjects#update'
   delete '/subjects/:id' => 'subjects#destroy'
+  post '/subjects/:id/' => 'subjects#follow'
 
   get '/discussions' => 'discussions#index'
   get '/discussions/new' => 'discussions#new'

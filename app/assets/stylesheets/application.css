@@ -33,10 +33,10 @@
  *= require theme/style-yellow2
  *= require theme/style-red2
  *= require theme/style-violet3
- *= require theme/style-violet2
  *= require theme/style-gray
  *= require theme/style-yellow
  *= require theme/style-aqua
+ *= require theme/style-violet2
  *= require theme/shCore
  *= require theme/shCoreDefault
  *= require theme/shCoreDjango
